@@ -173,7 +173,7 @@ Tip: sorteer altijd de records op Id.
 ###  Componenten
 Er zijn voor C# een aantal open source componenten beschikbaar die kunnen helpen bij de implementatie van een DD API V3: https://github.com/DigitaleDeltaOrg/ODataLib-CSharp. 
 
-Deze zijn ook beschikbaar als NuGet pakketten: https://www.nuget.org/packages?q=DigitaleDelta.
+Deze zijn ook beschikbaar als NuGet pakketten door te zoeken op `DigitaleDelta`.
 
 Deze componenten zorgen voor het ontleden van de OData query, vertalen naar database queries en formatteren van de response. Hierbij zijn geen Microsoft OData libraries nodig.
 
