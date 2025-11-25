@@ -21,9 +21,9 @@ Door die representatie is het mogelijk om data uit verschillende bronnen op een 
 De specificatie legt *niet* vast hoe data opgeslagen moet worden, maar beschrijft hoe data aangeboden moet worden.
 Het EDM is plat en eenvoudig, waardoor het gemakkelijk te begrijpen en te implementeren is.
 
-## Subset van <a href="https://docs.ogc.org/as/20-082r4/20-082r4.pdf" rel="nofollow">OM&S</a>
+## Subset van OM&S
 
-De specificatie gebruikt een subset van de <a href="https://docs.ogc.org/as/20-082r4/20-082r4.pdf" rel="nofollow">OM&S</a> standaard.
+De specificatie gebruikt een subset van de OM&S standaard.
 
 De standaard zelf is zeer uitgebreid en flexibel, maar daardoor ook complex en door verschillende uitbreidingen en interpretaties, moeilijk uitwisselbaar.
 
