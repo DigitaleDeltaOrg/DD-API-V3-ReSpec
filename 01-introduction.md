@@ -32,7 +32,7 @@ Gebruikers kunnen hierdoor eenvoudig data van verschillende bronnen combineren e
 
 <dfn>EDM</dfn>: Entity Data Model, een abstracte representatie van de data die wordt aangeboden via een API, beschreven in [CSDL](#dfn-csdl).
 
-<dfn>CSDL</dfn>: <a href="https://docs.oasis-open.org/odata/odata-csdl-xml/v4.01/odata-csdl-xml-v4.01.html" rel="nofollow">Common Schema Definition Language</a>, een XML-gebaseerde taal voor het beschrijven van het Entity Data Model in OData.
+<dfn>CSDL</dfn>: een XML-gebaseerde taal voor het beschrijven van het Entity Data Model in OData.
 
 [[OPENAPIS-3.0.3]]: OpenAPI Specification, een standaard voor het beschrijven van RESTful API`s.
 
