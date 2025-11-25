@@ -30,7 +30,7 @@ Omdat dit 'breaking changes' zijn, past dit niet in versie 3.1.
 
 ## Opmerkingen
 
-- Afsplitsing van references maakt een functionele scheiding die gelijk is aan het <a href="https://docs.ogc.org/as/20-082r4/20-082r4.pdf" rel="nofollow">OM&S</a> model, die dezelfde blokken hanteert.
+- Afsplitsing van references maakt een functionele scheiding die gelijk is aan het OM&S model, die dezelfde blokken hanteert.
 - FoI kan eventueel worden uitgebreid met meetlocatie-specifieke informatie, zoals classificatiecodes volgens KRW.
 
 ## Roadmap voor Versie 4.1 (optioneel, naast 4.0)
