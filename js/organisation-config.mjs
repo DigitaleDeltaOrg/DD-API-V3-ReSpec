@@ -4,7 +4,7 @@
     nl_organisationPublishURL: "https://gitdocumentatie.logius.nl/publicatie/",
     fileName: "index.html",
     logos: [{
-        src: "../media/DigitaleDelta.svg",
+        src: "./media/DigitaleDelta.svg",
         alt: "Digitale Delta",
         id: "DigitaleDelta",
         height: 77,
@@ -290,6 +290,10 @@ export function loadRespecWithConfiguration(localConfig) {
                 }
                 return;
             }
+            config.alternateFormats.push({
+                label: 'PDF',
+                uri: pdfName,
+            });
         }
     ];
 
