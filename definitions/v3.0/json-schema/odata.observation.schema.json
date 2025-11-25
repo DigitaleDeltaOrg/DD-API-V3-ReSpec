@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "odata.observations.schema.json",
+  "type": "object",
+  "properties": {
+    "@odata.context": { "type": "string" },
+    "@odata.nextLink": { "type": "string" },
+    "value": {
+      "type": "array",
+      "items": { "$ref": "observation.schema.json#/$defs/Observation" }
+    }
+  },
+  "required": ["@odata.context", "value"]
+}

@@ -1,44 +1,40 @@
-import { loadRespecWithConfiguration } from "https://logius-standaarden.github.io/publicatie/respec/organisation-config.mjs";
+import { loadRespecWithConfiguration } from "./organisation-config.mjs";
 
 loadRespecWithConfiguration({
   useLogo: true,
   useLabel: true,
   license: "cc-by",
   specStatus: "WV",
-  specType: "HR",
+  specType: "st",
   pubDomain: "dk",
   shortName: "template",
-  publishDate: "2023-06-21",
-  publishVersion: "0.0.3",
+  publishDate: "2025-09-30",
+  publishVersion: "0.0.1",
 
   // TODO: Verwijder voordat de release plaats vindt
-  latestVersion: "https://github.com/logius-standaarden/respec-template/",
+  latestVersion: "https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/",
   prevVersion: [],
 
   editors:
     [
-      {
-        name: "Logius Standaarden",
-        company: "Logius",
-        companyURL: "https://logius.nl",
-      }
+        {
+            name: "Dolf Daal",
+            company: "Informatiehuis Water",
+            companyURL: "https://ecosys.nl"
+        },
+        {
+            name: "Jeroen Gerrits",
+            company: "Vortech",
+            companyURL: "https://vortech.nl"
+        }, 
     ],
   authors:
     [
-      {
-        name: "Logius Standaarden",
-        company: "Logius",
-        companyURL: "https://logius.nl",
-      }
+        {
+            name: "Geri Wolters",
+            company: "EcoSys",
+            companyURL: "https://ecosys.nl"
+        }
     ],
-  github: "https://github.com/Logius-standaarden/ReSpec-template",
-
-
-  // Create PDF and link to file in header (optional):
-  alternateFormats: [
-    {
-      label: "pdf",
-      uri: "template.pdf",
-    },
-  ],
+  github: "https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec"
 });

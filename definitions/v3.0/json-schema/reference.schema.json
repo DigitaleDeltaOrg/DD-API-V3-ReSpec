@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference.schema.json",
+  "title": "DigitaleDeltaModels Schema Library - Reference",
+  "description": "Schema-bibliotheek voor Reference.",
+  "$defs": {
+    "Reference": {
+      "type": "object",
+      "description": "A reference to an external code list entry. Can be extended with properties from ReferenceDefinitions.csv",
+      "properties": {
+        "Id": { "type": "string" },
+        "Type": { "type": "string" },
+        "Organisation": { "type": "string" },
+        "Code": { "type": "string" },
+        "Geography":  { "$ref": "geo.schema.json#/$defs/GeoJSON" },
+        "Description": { "type": "string" }
+      },
+      "required": ["Id", "Code", "Type"]
+    }
+  }
+}

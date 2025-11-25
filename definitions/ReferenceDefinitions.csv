@@ -1,0 +1,4 @@
+﻿Naam,OData data type,Omschrijving,Toegevoegd
+MeasurementObject,Edm.String,Meetobject/meetlocatie,
+MonitoringNetwork,Edm.String,Meetnetten,
+Projects,Edm.String,Projecten,

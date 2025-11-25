@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observation.schema.json",
+  "title": "DigitaleDeltaModels Schema Library - Observation",
+  "description": "Schema-bibliotheek voor Observation.",
+  "$defs": {
+    "TmPeriod": {
+      "type": "object",
+      "properties": {
+        "BeginPosition": { "type": "string", "format": "date-time" },
+        "EndPosition": { "type": "string", "format": "date-time" }
+      },
+      "required": ["BeginPosition"],
+      "additionalProperties": false
+    },
+
+    "Foi": {
+      "type": "object",
+      "properties": {
+        "Id": { "type": "string" },
+        "Code": { "type": "string" },
+        "Description": { "type": "string" },
+        "Geography":  { "$ref": "geo.schema.json#/$defs/GeoJSON" }
+      },
+      "required": ["Id", "Code", "Description"]
+    },
+
+    "ParameterContainer": {
+      "type": "object",
+      "description": "Open container for named parameters. Can be extended with properties from ContextDefinitions.csv",
+      "properties": {
+        "Compartment": { "type": "string" },
+        "Organisation": { "type": "string" },
+        "OrganisationNamespace": { "type": "string" }
+      }
+    },
+
+    "MetadataContainer": {
+      "type": "object",
+      "description": "Open container for named metadata. Can be extended with properties from MetaDefinitions.csv",
+      "properties": {
+        "ModifiedOn": { "type": "string", "format": "date-time" }
+      }
+    },
+
+    "Measure": {
+      "type": "object",
+      "properties": {
+        "Uom": { "type": "string" },
+        "Value": { "type": "number" },
+        "Namespace": { "type": "string" }
+      },
+      "required": ["Uom"]
+    },
+
+    "CategoryVerb": {
+      "type": "object",
+      "properties": {
+        "Vocabulary": { "type": "string" },
+        "Term": { "type": "string" },
+        "Namespace": { "type": "string" }
+      },
+      "required": ["Vocabulary", "Term"]
+    },
+
+    "Result": {
+      "type": "object",
+      "properties": {
+        "Id": { "type": "string" },
+        "Truth": { "type": "boolean" },
+        "Count": { "type": "integer" },
+        "Measure": { "$ref": "#/$defs/Measure" },
+        "Vocab": { "$ref": "#/$defs/CategoryVerb" },
+        "CoverageJSON": { "$ref": "coverage.schema.json#/$defs/CoverageJSON" }
+      },
+      "required": ["Id"],
+      "anyOf": [
+        { "required": ["Count"] },
+        { "required": ["Truth"] },
+        { "required": ["Measure"] },
+        { "required": ["Vocab"] },
+        { "required": ["CoverageJSON"] }
+      ],
+      "additionalProperties": false
+    },
+
+    "Observation": {
+      "type": "object",
+      "properties": {
+        "Id": { "type": "string" },
+        "Type": { "type": "string" },
+        "ResultTime": { "type": "string", "format": "date-time" },
+        "PhenomenonTime": { "$ref": "#/$defs/TmPeriod" },
+        "ValidTime": { "$ref": "#/$defs/TmPeriod" },
+        "Parameter": { "$ref": "#/$defs/ParameterContainer" },
+        "Metadata": { "$ref": "#/$defs/MetadataContainer" },
+        "Foi": { "$ref": "#/$defs/Foi" },
+        "Result": { "$ref": "#/$defs/Result" }
+      },
+      "required": ["Id", "Type", "ResultTime", "PhenomenonTime", "Parameter", "Foi", "Result"],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "PhenomenonTime": { "type": "object" }
+            }
+          },
+          "then": {
+            "properties": {
+              "PhenomenonTime": {
+                "allOf": [
+                  {
+                    "required": ["EndPosition"]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+
+    "RelatedObservation": {
+      "type": "object",
+      "properties": {
+        "Id": { "type": "string" },
+        "Role": { "type": "string" }
+      },
+      "required": ["Id", "Role"]
+    }
+  }
+}

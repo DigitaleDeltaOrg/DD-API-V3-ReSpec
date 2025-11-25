@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "coverage.schema.json",
+  "title": "DigitaleDeltaModels Schema Library - CoverageJSON",
+  "description": "Schema-bibliotheek voor CoverageJSON.",
+  "$defs": {
+    "CoverageJSON": {
+      "type": "object",
+      "description": "CoverageJSON (open type) as in CSDL. OpenType -> additionalProperties allowed.",
+      "properties": {
+        "Type": { "type": "string" },
+        "Domain": { "$ref": "#/$defs/CoverageDomain" },
+        "Parameters": { "$ref": "#/$defs/CoverageParameterContainer" },
+        "Ranges": { "$ref": "#/$defs/CoverageRangeContainer" },
+        "Nodata": { "type": "string" },
+        "Profile": { "type": "string" }
+      }
+    },
+
+    "CoverageDomain": {
+      "type": "object",
+      "properties": {
+        "Type": { "type": "string" },
+        "Axes": { "$ref": "#/$defs/CoverageAxes" },
+        "Referencing": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/CoverageReferencing" }
+        },
+        "CRS": { "type": "string" }
+      }
+    },
+
+    "CoverageAxes": {
+      "type": "object",
+      "properties": {
+        "x": { "$ref": "#/$defs/CoverageAxis" }
+      }
+    },
+
+    "CoverageAxis": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "values": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "start": { "type": "number" },
+        "size": { "type": "integer" },
+        "offset": { "type": "number" },
+        "spacing": { "type": "number" },
+        "keys": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "CoverageReferencing": {
+      "type": "object",
+      "properties": {
+        "coordinates": { "type": "string" },
+        "system": { "type": "string" },
+        "datum": { "type": "string" }
+      }
+    },
+
+    "CoverageParameterContainer": {
+      "type": "object",
+      "description": "Open container for named parameters",
+      "properties": {
+        "temperature": { "$ref": "#/$defs/CoverageParameterDefinition" }
+      }
+    },
+
+    "CoverageParameterDefinition": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "units": { "type": "string" },
+        "observedProperty": { "type": "string" },
+        "description": { "type": "string" },
+        "flags": { "type": "string" }
+      }
+    },
+
+    "CoverageRangeContainer": {
+      "type": "object",
+      "properties": {
+        "temperature": { "$ref": "#/$defs/CoverageRangeDefinition" }
+      }
+    },
+
+    "CoverageRangeDefinition": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "dataType": { "type": "string" },
+        "axisNames": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "shape": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "values": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "encoding": { "type": "string" }
+      }
+    }
+  }
+}

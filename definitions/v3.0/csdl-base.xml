@@ -1,0 +1,163 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DigitaleDeltaModels">
+            <EntityType Name="Reference">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false"/>
+                <Property Name="Type" Type="Edm.String"/>
+                <Property Name="Organisation" Type="Edm.String"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false"/>
+                <Property Name="Geography" Type="Edm.Geography"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="Observation">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false"/>
+                <Property Name="ResultTime" Type="Edm.DateTimeOffset" Nullable="false"/>
+                <Property Name="PhenomenonTime" Type="DigitaleDeltaModels.TmPeriod" Nullable="false"/>
+                <Property Name="ValidTime" Type="DigitaleDeltaModels.TmPeriod"/>
+                <Property Name="Parameter" Type="DigitaleDeltaModels.ParameterContainer" Nullable="false"/>
+                <Property Name="Metadata" Type="DigitaleDeltaModels.MetadataContainer"/>
+                <Property Name="Foi" Type="DigitaleDeltaModels.Foi"/>
+                <Property Name="Result" Type="DigitaleDeltaModels.Result"/>
+            </EntityType>
+            <ComplexType Name="TmPeriod">
+                <Property Name="BeginPosition" Type="Edm.DateTimeOffset"/>
+                <Property Name="EndPosition" Type="Edm.DateTimeOffset"/>
+            </ComplexType>
+            <ComplexType Name="Foi">
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Code" Type="Edm.String" Nullable="false" />
+                <Property Name="Description" Type="Edm.String" Nullable="false" />
+                <Property Name="Geography" Type="Edm.Geography" />
+                <!-- Uitbreiden met eigen selectie van eigenschappen uit ReferenceDefinitions.csv -->
+            </ComplexType>
+            <ComplexType Name="ParameterContainer">
+                <Property Name="Compartment" Type="Edm.String"/>
+                <Property Name="Organisation" Type="Edm.String"/>
+                <Property Name="OrganisationNamespace" Type="Edm.String"/>
+                <!-- Uitbreiden met eigen selectie van eigenschappen uit ContextDefinitions.csv -->
+            </ComplexType>
+            <ComplexType Name="MetadataContainer">
+                <Property Name="ModifiedOn" Type="Edm.DateTimeOffset"/>
+                <!-- Uitbreiden met eigen selectie van eigenschappen uit MetadataDefinitions.csv -->
+            </ComplexType>
+            <ComplexType Name="Result">
+                <Property Name="Id" Type="Edm.String" Nullable="false"/>
+                <Property Name="Truth" Type="Edm.Boolean"/>
+                <Property Name="Count" Type="Edm.Int64"/>
+                <Property Name="Measure" Type="DigitaleDeltaModels.Measure"/>
+                <Property Name="Vocab" Type="DigitaleDeltaModels.CategoryVerb"/>
+                <Property Name="CoverageJSON" Type="DigitaleDeltaModels.CoverageJSON"/>
+            </ComplexType>
+            <ComplexType Name="Measure">
+                <Property Name="Uom" Type="Edm.String" Nullable="false"/>
+                <Property Name="Value" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="Namespace" Type="Edm.String"/>
+            </ComplexType>
+            <ComplexType Name="CategoryVerb">
+                <Property Name="Vocabulary" Type="Edm.String" Nullable="false"/>
+                <Property Name="Term" Type="Edm.String" Nullable="false"/>
+            </ComplexType>
+            <EntityType Name="RelatedObservation">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false"/>
+                <Property Name="Role" Type="Edm.String" Nullable="false"/>
+            </EntityType>
+            <ComplexType Name="CoverageJSON" OpenType="true">
+                <Property Name="Type" Type="Edm.String"/>
+                <Property Name="Domain" Type="DigitaleDeltaModels.CoverageDomain"/>
+                <Property Name="Parameters" Type="DigitaleDeltaModels.CoverageParameterContainer"/>
+                <Property Name="Ranges" Type="DigitaleDeltaModels.CoverageRangeContainer"/>
+                <Property Name="Nodata" Type="Edm.String"/>
+                <Property Name="Profile" Type="Edm.String"/>
+            </ComplexType>
+            <!-- Domain description: axes can be dynamic (named axes) -->
+            <ComplexType Name="CoverageDomain" OpenType="true">
+                <Property Name="Type" Type="Edm.String"/>
+                <Property Name="Axes" Type="DigitaleDeltaModels.CoverageAxes"/>
+                <Property Name="Referencing" Type="Collection(DigitaleDeltaModels.CoverageReferencing)"/>
+                <Property Name="CRS" Type="Edm.String"/>
+            </ComplexType>
+            <!-- Axes container: OpenType so axis names (e.g. x, y, t) become dynamic properties -->
+            <ComplexType Name="CoverageAxes" OpenType="true">
+                <!-- Example of a typed axis property (clients may add axis properties dynamically) -->
+                <Property Name="x" Type="DigitaleDeltaModels.CoverageAxis" Nullable="true"/>
+            </ComplexType>
+            <!-- Single axis definition -->
+            <ComplexType Name="CoverageAxis">
+                <Property Name="type" Type="Edm.String"/>
+                <Property Name="values" Type="Collection(Edm.Double)"/>
+                <Property Name="start" Type="Edm.Double"/>
+                <Property Name="size" Type="Edm.Int64"/>
+                <Property Name="offset" Type="Edm.Double"/>
+                <Property Name="spacing" Type="Edm.Double"/>
+                <Property Name="keys" Type="Collection(Edm.String)"/>
+            </ComplexType>
+            <!-- Referencing entry used in domain.referencing -->
+            <ComplexType Name="CoverageReferencing">
+                <Property Name="coordinates" Type="Edm.String"/>
+                <Property Name="system" Type="Edm.String"/>
+                <Property Name="datum" Type="Edm.String"/>
+            </ComplexType>
+            <!-- Parameter definitions: open to allow arbitrary parameter names -->
+            <ComplexType Name="CoverageParameterContainer" OpenType="true">
+                <!-- Example property; real parameters appear as additional dynamic properties -->
+                <Property Name="temperature" Type="DigitaleDeltaModels.CoverageParameterDefinition" Nullable="true"/>
+            </ComplexType>
+            <ComplexType Name="CoverageParameterDefinition">
+                <Property Name="type" Type="Edm.String"/>
+                <Property Name="units" Type="Edm.String"/>
+                <Property Name="observedProperty" Type="Edm.String"/>
+                <Property Name="description" Type="Edm.String"/>
+                <Property Name="flags" Type="Edm.String"/>
+            </ComplexType>
+            <!-- Ranges container: open to allow parameter-specific range objects -->
+            <ComplexType Name="CoverageRangeContainer" OpenType="true">
+                <!-- Example property; actual range entries appear as dynamic properties -->
+                <Property Name="temperature" Type="DigitaleDeltaModels.CoverageRangeDefinition" Nullable="true"/>
+            </ComplexType>
+            <ComplexType Name="CoverageRangeDefinition" OpenType="true">
+                <Property Name="type" Type="Edm.String"/>
+                <Property Name="dataType" Type="Edm.String"/>
+                <Property Name="axisNames" Type="Collection(Edm.String)"/>
+                <Property Name="shape" Type="Collection(Edm.Int64)"/>
+                <Property Name="values" Type="Collection(Edm.Double)"/>
+                <Property Name="encoding" Type="Edm.String"/>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Default">
+            <Function Name="intersects" IsBound="false">
+                <Parameter Name="bindingParameter" Type="DigitaleDeltaModels.Reference"/>
+                <Parameter Name="wkt" Type="Edm.String"/>
+                <ReturnType Type="Edm.Boolean" Nullable="false"/>
+            </Function>
+            <Function Name="intersects" IsBound="true">
+                <Parameter Name="bindingParameter" Type="DigitaleDeltaModels.Observation"/>
+                <Parameter Name="wkt" Type="Edm.String"/>
+                <ReturnType Type="Edm.Boolean" Nullable="false"/>
+            </Function>
+            <Function Name="distance" IsBound="true">
+                <Parameter Name="bindingParameter" Type="DigitaleDeltaModels.Reference"/>
+                <Parameter Name="wkt" Type="Edm.String"/>
+                <ReturnType Type="Edm.Double" Nullable="false"/>
+            </Function>
+            <Function Name="distance" IsBound="true">
+                <Parameter Name="bindingParameter" Type="DigitaleDeltaModels.Observation"/>
+                <Parameter Name="wkt" Type="Edm.String"/>
+                <ReturnType Type="Edm.Double" Nullable="false"/>
+            </Function>
+            <EntityContainer Name="Container">
+                <EntitySet Name="references" EntityType="DigitaleDeltaModels.Reference"/>
+                <EntitySet Name="observations" EntityType="DigitaleDeltaModels.Observation"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
