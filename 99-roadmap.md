@@ -21,7 +21,7 @@ Omdat dit 'breaking changes' zijn, past dit niet in versie 3.1.
 | URL-aanpassingen | References komt te vervallen                   | /references vervalt. Rol wordt overgenomen door /foi, /parameters en /metadata      | Gepland                 |
 | Standaarden      | JSON-LD                                        | JSON-LD toevoegen aan references                                                    | Onderzoeken/Consultatie |
 | Standaarden      | JSON-FG/NEN3610-2022                           | Toevoegen aan foi endpoint                                                          | Onderzoeken/Consultatie |
-| Standaarden      | Naamgevingen                                   | Responses meer in lijn brengen met [OM&S](#dfn-oms) JSON-profiel (ook camelCase)            | Onderzoeken/Consultatie |
+| Standaarden      | Naamgevingen                                   | Responses meer in lijn brengen met [[OM&S]] JSON-profiel (ook camelCase)            | Onderzoeken/Consultatie |
 | Compliance       | TLS 1.2 verbieden, 1.3 vereisen                | TLS 1.2 is niet veilig genoeg meer                                                  | Gepland                 |
 | Observations     | PubSub specificeren, optionele functionaliteit | Op basis van W3C WebSub                                                             | Onderzoeken/Consultatie |
 | Standaarden      | Nieuwe versie ADR                              | Belangrijke items nieuwe versie van API Design Rules meenemen                       | Onderzoeken             |

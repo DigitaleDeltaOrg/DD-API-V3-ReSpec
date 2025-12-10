@@ -1,6 +1,6 @@
 ﻿# Datamodellen (Observation)
 
-Dit hoofdstuk beschrijft het datamodel van DD API V3, gebaseerd op een subset van de OGC [OM&S](#dfn-oms) standaard.
+Dit hoofdstuk beschrijft het datamodel van DD API V3, gebaseerd op een subset van de OGC [[OM&S]] standaard.
 
 Dit beschrijft de JSON-representatie van een observatie.
 
@@ -47,7 +47,7 @@ In DD API V3 is FoI (Feature of Interest) altijd een geolocatie.
 
 ## Parameter
 
-Parameter volgens [OM&S](#dfn-oms) is een dictionary van key/value pairs.
+Parameter volgens [[OM&S]] is een dictionary van key/value pairs.
 
 In DD API V3 is value altijd een string, waarbij geldt dat de combinatie van key en value uniek is per observatie,
 maar ook dat die combinatie **zoveel mogelijk** overeenkomt met de Aquo-termen, maar die combinatie moet ook voorkomen in de data van het referentie-endpoint.
@@ -99,7 +99,7 @@ Onderwerp/waarde combinatie (classificatie).
 
 ## CoverageJSON
 
-Voor tijdreeksen wordt gebruik gemaakt van [#dfn-coveragejson] formaat.
+Voor tijdreeksen wordt gebruik gemaakt van [[CoverageJSON]] formaat.
 Voor DD API V3 zijn er aan implementeren van een correcte CoverageJSON een aantal eisen gesteld:
 
 - Voor sensoren wordt aangeraden om een tijdreeks te hebben met de naam van een Aquo waarnemingssoort.

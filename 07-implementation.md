@@ -14,13 +14,13 @@ Daarnaast staat het vrij om eigenschappen **toe te voegen** aan entiteit 'refere
 
 Een OData API heeft een aantal vaste onderdelen:
 
-- een $metadata (`../v3/odata/$metadata`) endpoint dat de [CSDL](#dfn-csdl) (Common Schema Definition Language) beschrijft
+- een $metadata (`../v3/odata/$metadata`) endpoint dat de [[CSDL]] (Common Schema Definition Language) beschrijft
 - een of meer entiteiten (entity sets) die de data representeren
 - een aantal standaard query-opties voor zoeken en filteren
 
 Omdat de API een REST API is, is er ook een OpenAPI Specificatie (OAS).
 
-De [Open API Specification](#dfn-oas), of OAS, is afgeleid van de CSDL (Common Schema Definition Language) die de entiteiten en relaties in de API beschrijft.
+De [OAS] (Open API Specification), is afgeleid van de CSDL (Common Schema Definition Language) die de entiteiten en relaties in de API beschrijft.
 
 Een [basis OAS](./definitions/v3.0/oas3.0-base.yaml) is beschikbaar als onderdeel van de specificatie. 
 

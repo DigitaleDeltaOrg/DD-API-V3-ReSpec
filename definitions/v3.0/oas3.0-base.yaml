@@ -10,9 +10,17 @@ info:
   x-logo:
     # Eventueel uitbreiden met eigen tekst
     url: /v3/DigitaleDelta.svg
+  # OPTIONEEL TOEVOEGEN: mTLSspecificatie  
+  x-mtls:
+    required: false
+    description: "Optional mTLS for clients; fallback to ApiKey/Bearer if not present."
+    validation:
+      requireClientCert: false
+      allowedSubjects:
+        - "CN=client.example.com"
 externalDocs:
   description: Official documentation
-  url: https://github.com/DigitaleDeltaOrg/dd-api-v3/tree/v3-docs
+  url: https://digitaledeltaorg.github.io/DD-API-V3-ReSpec/
 
 # AANPASSEN: Voeg hier je eigen server URL's toe
 # servers:

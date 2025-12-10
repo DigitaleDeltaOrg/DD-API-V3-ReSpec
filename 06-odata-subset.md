@@ -1,6 +1,6 @@
 ﻿# OData Subset
 
-DD API V3 gebruikt een subset van [OData](#dfn-odata).
+DD API V3 gebruikt een subset van [[OData]].
 
 De gedachte erachter is dat DD API V3 niet gebruikt moet worden voor data beheer of data transformatie, maar puur voor het opvragen van data.
 Omdat de datasets potentieel erg groot kunnen zijn, is het belangrijk dat de zoekmogelijkheden krachtig, maar ook efficiënt zijn.

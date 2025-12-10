@@ -3,8 +3,8 @@
 De DD API V3 specificatie is ontworpen met een aantal kernconcepten in gedachten om interoperabiliteit, flexibiliteit en gebruiksgemak te waarborgen. Hieronder worden de belangrijkste ontwerpconcepten toegelicht.
 
 - Eenvoudig, gestandaardiseerd, virtueel datamodel
-- Subset van [OM&S](#dfn-oms) via profielen
-- Subset van de [OData](#dfn-odata) V4 standaard met vereenvoudigde geografische uitbreidingen
+- Subset van [[OM&S]] via profielen
+- Subset van de [[OData]] V4 standaard met vereenvoudigde geografische uitbreidingen
 - [[OpenAPI 3.0]] beschrijft de API
 - Semantische interoperabiliteit via gestandaardiseerde vocabularia ('Water-taal' van [[Aquo]])
 - Profielen voor het beschrijven van de data
@@ -12,7 +12,7 @@ De DD API V3 specificatie is ontworpen met een aantal kernconcepten in gedachten
 
 ## Virtueel Datamodel
 
-Onderdeel van de OData standaard is het [Entity Data Model (EDM)](#dfn-edm) beschreven in de CSDL-standaard. 
+Onderdeel van de OData standaard is het [[EDM]] beschreven in de CSDL-standaard. 
 
 Dit is een abstracte representatie van de data die wordt aangeboden via de API.
 
@@ -32,7 +32,7 @@ Door gebruik te maken van een subset en profielen, wordt de complexiteit vermind
 
 ## Subset van OData V4
 
-Een veelgehoorde klacht over [OData](#dfn-odata) is dat het groot is en complex te implementeren. 
+Een veelgehoorde klacht over [[OData]] is dat het groot is en complex te implementeren. 
 
 Ook de standaard programmabibliotheken hiervoor zijn vaak gericht op bepaalde technologieën en daardoor niet universeel bruikbaar.
 
@@ -76,7 +76,7 @@ Optioneel, maar sterk aanbevolen:
 
 - ObservationType (Code van de waarnemingssoort volgens Aquo)
 
-De responses zijn in [[CoverageJSON]] formaat zijn.
+De result van de responses zijn in [[CoverageJSON]] formaat zijn.
 
 ### Profiel FC-MS (losse metingen)
 
@@ -95,7 +95,7 @@ Optioneel, maar sterk aanbevolen:
 
 - ObservationType (Code van de waarnemingssoort volgens Aquo)
 
-De responses zijn primair in Measure formaat zijn (combinatie van eenheid en gemeten waarde).
+De result van de responses zijn primair in Measure formaat zijn (combinatie van eenheid en gemeten waarde).
 
 ### Profiel ECO (losse metingen)
 
@@ -120,8 +120,7 @@ Veel gebruikt, maar niet altijd nodig:
 Zoveel mogelijk kenmerken moeten worden gevuld in Parameter, afhankelijk van de omstandigheden van de metingen:
 vaak worden specifieke biologische kenmerken gemeten, zoals: soort, leeftijdsklasse, geslacht, etc., afhankelijk van het taxon dat geobserveerd wordt.
 
-De responses zullen divers zijn: Measure, Count, Truth en Vocab.
-
+De result van de responses zullen divers zijn: Measure, Count, Truth en Vocab.
 
 ## Eenvoudig en Toegankelijk
 
