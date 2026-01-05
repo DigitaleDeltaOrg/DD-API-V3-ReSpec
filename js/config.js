@@ -21,11 +21,12 @@ var respecConfig = {
     authors: [ { name: "Geri Wolters", company: "EcoSys", companyURL: "https://ecosys.nl" } ],
     logos: [
         {
-            src: "./media/DigitaleDelta.svg",
+            src: "https://digitaledeltaorg.github.io/DigitalDeltaLogoOptimized.svg",
             alt: "Digitale Delta",
-            height: 77,
-            width: 44,
-            url: "https://digitaledeltaorg.github.io/"
+            height: 200,
+            width: 100,
+            url: "https://digitaledeltaorg.github.io/",
+            id: "DigitaleDeltaLogo"
         }
     ],
     sotdText: {
@@ -135,7 +136,8 @@ var respecConfig = {
         "OGC": { title: "Open Geospatial Consortium, een internationale organisatie die standaarden ontwikkelt", href: "https://www.ogc.org" },
         "JSON": { title: "JavaScript Object Notation, een lichtgewicht data-uitwisselingsformaat dat gemakkelijk leesbaar is voor mensen en machines.", href: "https://json.org"  },
         "JSON Schema": { title: "Een vocabulaire voor het annoteren en valideren van de structuur van JSON-documenten.", href: "https://json.org" },
-        "Profiel": { title: "Een specifieke configuratie of subset van een standaard die is afgestemd op een bepaald gebruiksgebied of toepassing." }
+        "Profiel": { title: "Een specifieke configuratie of subset van een standaard die is afgestemd op een bepaald gebruiksgebied of toepassing." },
+        "WebSub": { title: "Een webprotocol voor het publiceren en abonneren op berichten in real-time.", href: "https://www.w3.org/TR/websub/" }
     },
     plugins: {
         "core/data-include": {},

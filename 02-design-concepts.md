@@ -115,7 +115,7 @@ In ieder geval moeten de volgende kenmerken worden gevuld:
 Veel gebruikt, maar niet altijd nodig:
 
 - Capacity (Hoedanigheid)
-- Characterization (Typering)
+- Characteristic (Typering)
 
 Zoveel mogelijk kenmerken moeten worden gevuld in Parameter, afhankelijk van de omstandigheden van de metingen:
 vaak worden specifieke biologische kenmerken gemeten, zoals: soort, leeftijdsklasse, geslacht, etc., afhankelijk van het taxon dat geobserveerd wordt.

@@ -112,8 +112,12 @@ Truth (waar/niet waar)
 ```
 
 [[CoverageJSON]], tijdreeks of ruimtelijke dekking. Dit zal hoofdzakelijk voor **waterkwantiteit** worden gebruikt.
+Het is aan te raden om bij **waterkwantiteitsmetingen** ook parameter/observationtype te vullen met een relevante waarde volgens de Aquo domeintabel 'Waarnemingssoort'.
+Dit geeft veelal een voldoende distinctie voor selectie.
 
-Dit formaat is uitgebreider. Hieronder een voorbeeld van een tijdreeks met 6 tijdstippen op een enkele locatie:
+
+[[CoverageJSON]] is een uitgebreid formaat voor het weergeven van tijdreeksen en ruimtelijke dekkingen.
+Hieronder een voorbeeld van een tijdreeks met 6 tijdstippen op een enkele locatie:
 
 ```json
 {
@@ -186,3 +190,7 @@ Dit formaat is uitgebreider. Hieronder een voorbeeld van een tijdreeks met 6 tij
 ```
 
 Wanneer er meer observaties voldoen aan het filter dan op de pagina passen, dan wordt een @odata.nextLink meegegeven in de response, die een url bevat, waarmee de volgende pagina kan worden opgevraagd.
+
+**Belangrijk** Het coverage-deel moet *geldig* zijn, Dat kan bijvoorbeeld in de CoverageJSON playground worden getest: https://covjson.org/playground/. Playground geeft fouten wanneer de structuur ongeldig is.
+
+

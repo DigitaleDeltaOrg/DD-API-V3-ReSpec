@@ -528,7 +528,7 @@ components:
             TaxonRank: Species
             TaxonAuthors: (Montagu, 1815)
             TaxonStatusCode: '10'
-        '@odata.nextLink': https://localhost:7071/v3/odata/references?$filter=contains(Code%2c++%27alba%27)&$top=1&$skip=1
+        '@odata.nextLink': https://localhost:7071/v3/odata/references?$filter=contains(Code%2c++%27alba%27)&$top=1&$skiptoken=kjdlfasd0980234jlsd
 
     DigitaleDelta.ObservationCollectionResponse:
       title: Collection of Observation

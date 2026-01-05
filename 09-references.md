@@ -21,7 +21,7 @@ Hieronder staan enkele voorbeeld queries voor het opvragen van references via de
 ### Geografische filter
 
 Voor geografische filtering kan gebruik worden gemaakt van de specifieke DD API V3 geografische functies: `distance` en `intersects`.
-Een note over coördinatenstelsels:
+Een opmerking over coördinatenstelsels:
 
 - Standaard worden alle coördinaten in ETRS89 (longitude latitude) gebruikt, in booggraden, dus.
 - De gebruiker kan middels `Accept-Crs` header aangeven in welk CRS (coördinatenenstelsel) de data teruggegeven moet worden en de vergelijking moet worden uitgevoerd. Daarvoor de ESPG code uit onderstaande lijst gebruiken, bijvoorbeeld `Accept-Crs: EPSG:28992` voor RD New.
@@ -44,11 +44,11 @@ De volgende lijst toont de minimaal ondersteunde coördinatenstelsels met hun EP
 ### Alle observaties binnen een straal van 1000 meter van een punt (_let op: bij coördinatenstelsels die eenheid meters gebruiken_)
 
 ```GET
-/v3/odata/references?$filter=distance('POINT(5.00166 52.34331)') lt 1000
+/v3/odata/references?$filter=distance(wkt='POINT(5.00166 52.34331)') lt 1000
 ```
 
 ### Alle observaties die binnen een bepaald polygon vallen (_let op: dit voorbeeld gaat uit van graden en is bedoeld voor coördinatenstelsels die eenheid graden gebruiken._)
 
 ```GET
-/v3/odata/references?$filter=intersects('POLYGON((5.00 52.34, 5.01 52.34, 5.01 52.35, 5.00 52.35, 5.00 52.34))') eq true
+/v3/odata/references?$filter=intersects(wkt='POLYGON((5.00 52.34, 5.01 52.34, 5.01 52.35, 5.00 52.35, 5.00 52.34))') eq true
 ```

@@ -4,9 +4,10 @@ De volgende items zijn gepland of worden onderzocht voor de volgende versie van 
 
 ## Roadmap voor Versie 3.1 
 
-Toevoegen van gebruiksprofielen.
-Gebruiksprofielen zijn vooraf gedefinieerde sets van grootheid/parameters/eigenschappen die zijn afgestemd op specifieke toepassingen of sectoren, die kunnen gebruikt worden voor 'snel zoeken' van observaties.
-Hierdoor kunnen gebruikers eenvoudig observaties opvragen die relevant zijn voor hun specifieke behoeften, zonder dat ze handmatig uitgebreide filters hoeven te definiëren.
+  | Categorie     | Onderwerp                                      | Omschrijving                                                                                | Status                  |
+  |---------------|------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------|
+  | PubSub        | PubSub specificeren, optionele functionaliteit | Op basis van W3C [[WebSub]]                                                                 | Onderzoeken/Consultatie |
+  | Zoekprofielen | Zoekprofielen specificeren                     | Vooraf gedefinieerde selecties van observaties op basis van filters en geselecteerde velden | Gepland                 |
 
 ## Roadmap voor Versie 4.0
 
@@ -23,7 +24,7 @@ Omdat dit 'breaking changes' zijn, past dit niet in versie 3.1.
 | Standaarden      | JSON-FG/NEN3610-2022                           | Toevoegen aan foi endpoint                                                          | Onderzoeken/Consultatie |
 | Standaarden      | Naamgevingen                                   | Responses meer in lijn brengen met [[OM&S]] JSON-profiel (ook camelCase)            | Onderzoeken/Consultatie |
 | Compliance       | TLS 1.2 verbieden, 1.3 vereisen                | TLS 1.2 is niet veilig genoeg meer                                                  | Gepland                 |
-| Observations     | PubSub specificeren, optionele functionaliteit | Op basis van W3C WebSub                                                             | Onderzoeken/Consultatie |
+| Observations     | PubSub specificeren, optionele functionaliteit | Op basis van W3C [[WebSub]]                                                         | Onderzoeken/Consultatie |
 | Standaarden      | Nieuwe versie ADR                              | Belangrijke items nieuwe versie van API Design Rules meenemen                       | Onderzoeken             |
 | Standaarden      | Parameter/parameter uitsplitsen?               | Vervangen door specifieke velden per parametertype (Physical/Chemical/Taxon/Object) | Onderzoeken/Consultatie |
 | Vereenvoudiging  | Vereenvoudig header informatie                 | Laat Accept-Crs en Prefer ook toe als URL parameters                                | Onderzoeken/Consultatie |
@@ -39,7 +40,6 @@ Omdat dit 'breaking changes' zijn, past dit niet in versie 3.1.
 
 | Categorie | Onderwerp                                      | Omschrijving                                                               | Status                  |
 |-----------|------------------------------------------------|----------------------------------------------------------------------------|-------------------------| 
-| PubSub    | PubSub specificeren, optionele functionaliteit | Op basis van W3C WebSub                                                    | Onderzoeken/Consultatie |
 | CRUD      | Observaties                                    | Mogelijkheid om observaties toe te voegen, bij te werken en te verwijderen | Onderzoeken/Consultatie |
 | CRUD      | Referenties                                    | Mogelijkheid om referenties toe te voegen, bij te werken en te verwijderen | Onderzoeken/Consultatie |
 | CRUD      | Profiles                                       | Mogelijkheid om profiel toe te voegen, bij te werken en te verwijderen     | Onderzoeken/Consultatie | 

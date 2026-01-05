@@ -177,3 +177,23 @@ Deze zijn ook beschikbaar als NuGet pakketten door te zoeken op `DigitaleDelta`.
 
 Deze componenten zorgen voor het ontleden van de OData query, vertalen naar database queries en formatteren van de response. Hierbij zijn geen Microsoft OData libraries nodig.
 
+
+## Conformiteit Checklist
+
+Onderstaande tabel vat de normatieve eisen samen waar een implementatie aan moet voldoen om als een conforme DD API V3 server te worden beschouwd.
+
+| ID         | Onderwerp       | Eis                                                                                                                                                                                     |
+|:-----------|:----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **REQ-01** | Endpoints       | De endpoints `v3/odata/observations` en `v3/odata/references` <span class="rfc2119">moeten</span> beschikbaar zijn.                                                                     |
+| **REQ-02** | Metadata        | De server <span class="rfc2119">moet</span> een OData `$metadata` document serveren op de root van het odata endpoint.                                                                  |
+| **REQ-03** | Methoden        | De server <span class="rfc2119">moet</span> de `GET` methode ondersteunen; `POST` <span class="rfc2119">mag</span> worden ondersteund voor zoekopdrachten.                              |
+| **REQ-04** | Paginering      | Gebruik van `$skiptoken` is <span class="rfc2119">verplicht</span> voor paginering; `$skip` wordt <span class="rfc2119">niet ondersteund</span>.                                        |
+| **REQ-05** | OData Subset    | De server <span class="rfc2119">moet</span> de query-opties `$filter`, `$top`, `$select`, `$count` en `$skiptoken` ondersteunen zoals beschreven in [OData Subset](06-odata-subset.md). |
+| **REQ-06** | Geografie       | Alleen de geografische functies `distance()` en `intersects()` <span class="rfc2119">mogen</span> worden gebruikt.                                                                      |
+| **REQ-07** | CRS             | De server <span class="rfc2119">moet</span> de `Accept-Crs` header ondersteunen en de `Content-Crs` header meesturen in de response wanneer het request een Accept-Crs header bevat.    |
+| **REQ-08** | Datamodel       | De JSON-response <span class="rfc2119">moet</span> voldoen aan de [datamodellen](04-data-models-observation.md) en het bijbehorende JSON Schema.                                        |
+| **REQ-09** | ModifiedOn      | Het metadata veld `modifiedOn` <span class="rfc2119">moet</span> aanwezig zijn bij elke observatie.                                                                                     |
+| **REQ-10** | Foutafhandeling | Bij fouten <span class="rfc2119">moet</span> de server reageren met de juiste [HTTP statuscodes](07-implementation.md#foutmeldingen).                                                   |
+| **REQ-11** | CoverageJSON    | Indien het resultaat een tijdreeks is, <span class="rfc2119">moet</span> dit in een valide CoverageJSON formaat worden aangeboden.                                                      |
+| **REQ-12** | Design Rules    | De server <span class="rfc2119">moet</span> voldoen aan de verplichte [Nederlandse API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/).                      |
+

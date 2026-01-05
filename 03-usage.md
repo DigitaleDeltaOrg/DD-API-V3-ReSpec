@@ -36,6 +36,7 @@ Indien de pagina grootte groter is dan de maximale grootte die de server accepte
 
 Omdat DD API V3 gebruik maakt van `$skiptoken`, is de volgende pagina niet direct op te vragen: de URL achter de `@odata.nextLink` moet worden gebruikt om de volgende pagina op te vragen.
 
+De parameter `$top` geeft het aantal te retourneren entiteiten binnen de value array aan. Let op: bij tijdreeksen wordt de volledige tijdreeks als één item beschouwd, ongeacht het aantal individuele meetpunten in de CoverageJSON.
 
 ## Geografie
 
