@@ -30,13 +30,13 @@ De volgende OData eigenschappen worden *niet* ondersteund:
 Reden is dat `$skip` inefficiënt is bij grote datasets, omdat de server alle records moet doorlopen om de juiste records te vinden.
 
 Dat resulteert in progressief trager wordende responses naarmate de `$skip` waarde groter wordt.
+
 Met `$skiptoken` kan de server direct naar de juiste plek in de dataset springen. Het wordt via de `@odata.nextLink property` in de response doorgegeven.
 In `$skiptoken` wordt meestal het laatste Id van de vorige response gebruikt, maar het kan ook een andere waarde zijn die de server gebruikt om de juiste plek in de dataset te vinden.
 Dit moet uiteraard in combinatie met `$filter` gebruikt worden, zodat de server weet of de zoekopdracht hetzelfde blijft.
 
-_Excel kan prima overweg met `$skiptoken` en zal automatisch de navolgende pagina's ophalen._
-
-`$top` bepaalt het maximum aantal entiteiten (zoals Observations of References) in de value array van de response. Bij een tijdreeks (CoverageJSON) telt de gehele tijdreeks als één enkel item, ongeacht het aantal meetwaarden daarin."
+`$top` bepaalt het maximum aantal entiteiten (zoals Observations of References) in de `value` array van de response. 
+Bij een tijdreeks (CoverageJSON) telt de gehele tijdreeks als één enkel item, ongeacht het aantal meetwaarden daarin.
 
 ## Geografische functies
 

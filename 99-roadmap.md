@@ -4,10 +4,11 @@ De volgende items zijn gepland of worden onderzocht voor de volgende versie van 
 
 ## Roadmap voor Versie 3.1 
 
-  | Categorie     | Onderwerp                                      | Omschrijving                                                                                | Status                  |
-  |---------------|------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------|
-  | PubSub        | PubSub specificeren, optionele functionaliteit | Op basis van W3C [[WebSub]]                                                                 | Onderzoeken/Consultatie |
-  | Zoekprofielen | Zoekprofielen specificeren                     | Vooraf gedefinieerde selecties van observaties op basis van filters en geselecteerde velden | Gepland                 |
+| Categorie        | Onderwerp                                      | Omschrijving                                                                                | Status                  |
+|------------------|------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------|
+| PubSub           | PubSub specificeren, optionele functionaliteit | Op basis van W3C [[WebSub]]                                                                 | Onderzoeken/Consultatie |
+| Zoekprofielen    | Zoekprofielen specificeren                     | Vooraf gedefinieerde selecties van observaties op basis van filters en geselecteerde velden | Gepland                 |
+| Resultaatprofiel | Uniformweren van gemengde resultaten           | Automatische conversie van data naar CoverageJSON of naar Observations                      | Gepland                 |
 
 ## Roadmap voor Versie 4.0
 
@@ -28,15 +29,16 @@ Omdat dit 'breaking changes' zijn, past dit niet in versie 3.1.
 | Standaarden      | Nieuwe versie ADR                              | Belangrijke items nieuwe versie van API Design Rules meenemen                       | Onderzoeken             |
 | Standaarden      | Parameter/parameter uitsplitsen?               | Vervangen door specifieke velden per parametertype (Physical/Chemical/Taxon/Object) | Onderzoeken/Consultatie |
 | Vereenvoudiging  | Vereenvoudig header informatie                 | Laat Accept-Crs en Prefer ook toe als URL parameters                                | Onderzoeken/Consultatie |
+| Bulk-downloads   | Bulk-downloads definiëren                      | NetCDF/(ongelimiteerde) CSV's                                                       | Onderzoeken/Consultatie |
 
 ## Opmerkingen
 
 - Afsplitsing van references maakt een functionele scheiding die gelijk is aan het OM&S model, die dezelfde blokken hanteert.
 - FoI kan eventueel worden uitgebreid met meetlocatie-specifieke informatie, zoals classificatiecodes volgens KRW.
 
-## Roadmap voor Versie 4.1 (optioneel, naast 4.0)
+## Roadmap voor Versie 4.1 (optioneel, naast 4)
 
-4.1 bevat additionele functionaliteit ten opzichte van 4.0.
+v4.1 bevat additionele functionaliteit ten opzichte van v4.
 
 | Categorie | Onderwerp                                      | Omschrijving                                                               | Status                  |
 |-----------|------------------------------------------------|----------------------------------------------------------------------------|-------------------------| 

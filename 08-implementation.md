@@ -6,15 +6,15 @@ Feitelijk is DD API V3 een API die via het OpenData Protocol (OData) dat kan ont
 Het voorziet niet in het wijzigen van data (geen Create, Update of Delete operaties). Ook transformatie van data (`$compute`) is niet voorzien.
 
 OData vereist een definitie van de entiteiten en relaties in de API. Dit wordt gedaan met CSDL (Common Schema Definition Language), een XML-gebaseerde taal.
-Een [basis CSDL](./definitions/v3.0/csdl-base.xml) is beschikbaar als onderdeel van de specificatie. Via comment is aangegeven waar aanpassingen gemaakt mogen worden.
+Een [basis CSDL](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/definitions/v3.0/csdl-base.xml) is beschikbaar als onderdeel van de specificatie. Via comment is aangegeven waar aanpassingen gemaakt mogen worden.
 
-De enige aanpassingen die mogen worden gemaakt, zit in de eigenschappen van de entiteiten ['parameter'](definitions/ContextDefinitions.csv)  en ['metadata'](definitions/MetadataDefinitions.csv) binnen entiteit 'observation', wat per profiel verschilt.
+De enige aanpassingen die mogen worden gemaakt, zit in de eigenschappen van de entiteiten ['parameter'](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/definitions/ContextDefinitions.csv) en ['metadata'](definitions/MetadataDefinitions.csv) binnen entiteit 'observation', wat per profiel verschilt.
 
 Daarnaast staat het vrij om eigenschappen **toe te voegen** aan entiteit 'reference'.
 
 Een OData API heeft een aantal vaste onderdelen:
 
-- een $metadata (`../v3/odata/$metadata`) endpoint dat de [[CSDL]] (Common Schema Definition Language) beschrijft
+- een $metadata (`/v3/odata/$metadata`) endpoint dat de [[CSDL]] (Common Schema Definition Language) beschrijft
 - een of meer entiteiten (entity sets) die de data representeren
 - een aantal standaard query-opties voor zoeken en filteren
 
@@ -22,7 +22,7 @@ Omdat de API een REST API is, is er ook een OpenAPI Specificatie (OAS).
 
 De [OAS] (Open API Specification), is afgeleid van de CSDL (Common Schema Definition Language) die de entiteiten en relaties in de API beschrijft.
 
-Een [basis OAS](./definitions/v3.0/oas3.0-base.yaml) is beschikbaar als onderdeel van de specificatie. 
+Een [basis OAS](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/definitions/v3.0/oas3.0-base.yaml) is beschikbaar als onderdeel van de specificatie. 
 
 YAML is gebruikt, omdat het daarmee via comments aan te geven us waar aanpassingen gemaakt mogen worden, wat niet in standaard JSON kan.
 
@@ -31,7 +31,7 @@ Boven beschreven wijzigingen aan parameter, metadata en referentie-entiteiten mo
 Daarnaast kunnen er aanpassingen worden gedaan in de OAS voor zaken die niet in de CSDL staan, zoals:
 
 - titel
-- logo (gebruik als basis [het logo van DD API V3](media/DigitaleDelta-Basis.svg))
+- logo (gebruik als basis [het logo van DD API V3](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/media/DigitaleDelta-Basis.svg))
 - server URL's
 - beveiliging (mTLS, OAuth2, OpenID Connect, API Keys)
 - contactinformatie
@@ -68,7 +68,7 @@ Dit is de **optionele code-generatie fase**.
 [Voor C# is er een open source library gemaakt voor DD API V3](https://github.com/DigitaleDeltaOrg/ODataLib-CSharp) die geen afhankelijkheden van de Microsoft OData libraries.
 Deze zijn ook beschikbaar als NuGet pakketten.
 
-![Infrastructuur](media/OData-Process.svg)
+![Infrastructuur](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/raw/refs/heads/main/media/OData-Process.svg)
 <figure>
 <figcaption>Infrastructuur</figcaption>
 </figure>
@@ -144,9 +144,9 @@ Dit werkt sneller dan `$skip`, omdat het niet nodig is om de volledige dataset d
 
 Het volgende blok data kan dan worden bepaald door in het filter op de opslaglaag een '> Id' toe te voegen.
 
-'$skip' wordt _sterk ontraden_.
+`$skip` wordt _sterk ontraden_.
 
-_Id is hier een unieke identifier van de record, bijvoorbeeld een auto-increment integer of een UUID._
+_Id is hier een unieke identifier van het record, bijvoorbeeld een auto-increment integer of een UUID._
 
 #### Produceren
 
@@ -182,18 +182,18 @@ Deze componenten zorgen voor het ontleden van de OData query, vertalen naar data
 
 Onderstaande tabel vat de normatieve eisen samen waar een implementatie aan moet voldoen om als een conforme DD API V3 server te worden beschouwd.
 
-| ID         | Onderwerp       | Eis                                                                                                                                                                                     |
-|:-----------|:----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **REQ-01** | Endpoints       | De endpoints `v3/odata/observations` en `v3/odata/references` <span class="rfc2119">moeten</span> beschikbaar zijn.                                                                     |
-| **REQ-02** | Metadata        | De server <span class="rfc2119">moet</span> een OData `$metadata` document serveren op de root van het odata endpoint.                                                                  |
-| **REQ-03** | Methoden        | De server <span class="rfc2119">moet</span> de `GET` methode ondersteunen; `POST` <span class="rfc2119">mag</span> worden ondersteund voor zoekopdrachten.                              |
-| **REQ-04** | Paginering      | Gebruik van `$skiptoken` is <span class="rfc2119">verplicht</span> voor paginering; `$skip` wordt <span class="rfc2119">niet ondersteund</span>.                                        |
-| **REQ-05** | OData Subset    | De server <span class="rfc2119">moet</span> de query-opties `$filter`, `$top`, `$select`, `$count` en `$skiptoken` ondersteunen zoals beschreven in [OData Subset](06-odata-subset.md). |
-| **REQ-06** | Geografie       | Alleen de geografische functies `distance()` en `intersects()` <span class="rfc2119">mogen</span> worden gebruikt.                                                                      |
-| **REQ-07** | CRS             | De server <span class="rfc2119">moet</span> de `Accept-Crs` header ondersteunen en de `Content-Crs` header meesturen in de response wanneer het request een Accept-Crs header bevat.    |
-| **REQ-08** | Datamodel       | De JSON-response <span class="rfc2119">moet</span> voldoen aan de [datamodellen](04-data-models-observation.md) en het bijbehorende JSON Schema.                                        |
-| **REQ-09** | ModifiedOn      | Het metadata veld `modifiedOn` <span class="rfc2119">moet</span> aanwezig zijn bij elke observatie.                                                                                     |
-| **REQ-10** | Foutafhandeling | Bij fouten <span class="rfc2119">moet</span> de server reageren met de juiste [HTTP statuscodes](07-implementation.md#foutmeldingen).                                                   |
-| **REQ-11** | CoverageJSON    | Indien het resultaat een tijdreeks is, <span class="rfc2119">moet</span> dit in een valide CoverageJSON formaat worden aangeboden.                                                      |
-| **REQ-12** | Design Rules    | De server <span class="rfc2119">moet</span> voldoen aan de verplichte [Nederlandse API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/).                      |
-
+| ID         | Onderwerp       | Eis                                                                                                                                                            |
+|:-----------|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **REQ-01** | Endpoints       | De endpoints `v3/odata/observations` en `v3/odata/references` **MOETEN** beschikbaar zijn.                                                                     |
+| **REQ-02** | Metadata        | De server **MOET** een OData `$metadata` document serveren op de root van het odata endpoint.                                                                  |
+| **REQ-03** | Methoden        | De server **MOET** de `GET` methode ondersteunen; `POST` **mag** worden ondersteund voor zoekopdrachten.                                                       |
+| **REQ-04** | Paginering      | Gebruik van `$skiptoken` is **verplicht** voor paginering; `$skip` wordt **niet ondersteund**.                                                                 |
+| **REQ-05** | OData Subset    | De server **MOET** de query-opties `$filter`, `$top`, `$select`, `$count` en `$skiptoken` ondersteunen zoals beschreven in [OData Subset](07-odata-subset.md). |
+| **REQ-06** | Geografie       | Alleen de geografische functies `distance()` en `intersects()` **mogen<** worden gebruikt.                                                                     |
+| **REQ-07** | CRS             | De server **MOET** de `Accept-Crs` header ondersteunen en de `Content-Crs` header meesturen in de response wanneer het request een Accept-Crs header bevat.    |
+| **REQ-08** | Datamodel       | De JSON-response **MOET** voldoen aan de [datamodellen](05-data-models-observation.md) en het bijbehorende JSON Schema.                                        |
+| **REQ-09** | ModifiedOn      | Het metadata veld `modifiedOn` **MOET** aanwezig zijn bij elke observatie.                                                                                     |
+| **REQ-10** | Foutafhandeling | Bij fouten **MOET** de server reageren met de juiste [HTTP statuscodes](08-implementation.md#foutmeldingen).                                                   |
+| **REQ-11** | CoverageJSON    | Indien het resultaat een tijdreeks is, **MOET** dit in een valide CoverageJSON formaat worden aangeboden.                                                      |
+| **REQ-12** | Design Rules    | De server **MOET** voldoen aan de verplichte [Nederlandse API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.0.0/).                      |
+| **REQ-13** | Discovery       | De server **MOET** de API-Version header meesturen en de X-DD-Capabilities header indien optionele V3.1 functionaliteiten aanwezig zijn.                       |

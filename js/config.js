@@ -17,6 +17,7 @@ var respecConfig = {
     version: "0.1.0",
     typeText: "DD API V3 specificatie",
     statusText: "Werkversie",
+    language: "nl",
     editors: [ { name: "Jeroen Gerrits", company: "Vortech", companyURL: "https://vortech.nl" } ],
     authors: [ { name: "Geri Wolters", company: "EcoSys", companyURL: "https://ecosys.nl" } ],
     logos: [
@@ -114,7 +115,7 @@ var respecConfig = {
         "API": { title: "Application Programming Interface, een set van regels en protocollen voor het bouwen en integreren van softwaretoepassingen." },
         "RESTful": { title: "Representational State Transfer, een architecturale stijl voor gedistribueerde systemen die gebruik maakt van standaard HTTP-methoden." },
         "IHW": { title: "Informatiehuis Water](https://ihw.nl) is een samenwerkingsverband van Nederlandse waterbeheerders dat zich richt op het verbeteren van informatie-uitwisseling en -beheer in het waterdomein.", href: "https://ihw.nl"},
-        "Digitale Delta": { title: "Een initiatief van Nederlandse waterbeheerders gericht op het verbeteren van de digitale gegevensuitwisseling in het waterdomein, beheerd door Informatiehuis Water.", href: "https://digitaledelta.github.io" },
+        "Digitale Delta": { title: "Een initiatief van Nederlandse waterbeheerders gericht op het verbeteren van de digitale gegevensuitwisseling in het waterdomein, beheerd door Informatiehuis Water.", href: "https://digitaledeltaorg.github.io" },
         "Observatie": { title: "Een meting of waarneming van een bepaald fenomeen op een specifieke locatie en tijd. De context van de observatie wordt beschreven met behulp van gestandaardiseerde vocabularia." },
         "Aquo": { title: "Een initiatief van Nederlandse waterbeheerders dat gestandaardiseerde vocabularia biedt voor het waterdomein, beheerd door [Informatiehuis Water](#dnf-ihw), de Aquo standaard.", href: "https://aquo.nl" },
         "OM&S": { title: "Observations, Measurements & Samples, een standaard van het Open Geospatial Consortium (OGC) voor het modelleren en uitwisselen van observatiegegevens.", href: "https://www.ogc.org/standards/om/" },

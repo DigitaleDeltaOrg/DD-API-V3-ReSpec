@@ -1,4 +1,10 @@
-﻿# Datamodellen (Observation)
+﻿# **Virtuele** Datamodellen (Observation)
+
+<aside class="advisement" title="Virtueel model">
+De modellen in dit hoofdstuk zijn virtueel. 
+Ze beschrijven uitsluitend de structuur van de data zoals deze door de API wordt uitgewisseld. 
+Een implementatie hoeft deze structuur intern niet als opslagmodel te gebruiken; de aanbieder is vrij in de keuze van database-technologie en mapt de eigen bronnen on-the-fly naar dit virtuele model.
+</aside>
 
 Dit hoofdstuk beschrijft het datamodel van DD API V3, gebaseerd op een subset van de OGC [[OM&S]] standaard.
 
@@ -6,9 +12,9 @@ Dit beschrijft de JSON-representatie van een observatie.
 
 Vet is verplicht. Italic (schuingedrukt) is verplicht onder bepaalde omstandigheden.
 
-Een JSON-schema voor het observation type is [hier](./definitions/v3.0/json-schema/observation.schema.json) beschikbaar.
+Een JSON-schema voor het observation type is [hier](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/raw/refs/heads/main/main/definitions/v3.0/json-schema/observation.schema.json) beschikbaar.
 
-Het gehele OData response in JSON-schema voor het `/v3/odata/observations` endpoint is [hier](./definitions/v3.0/json-schema/odata.observation.schema.json) beschikbaar.
+Het gehele OData response in JSON-schema voor het `/v3/odata/observations` endpoint is [hier](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/definitions/v3.0/json-schema/odata.observation.schema.json) beschikbaar.
 
 ## Observation
 Observation beschrijft de omstandigheden en de resultaten van een observatie.
@@ -52,15 +58,15 @@ Parameter volgens [[OM&S]] is een dictionary van key/value pairs.
 In DD API V3 is value altijd een string, waarbij geldt dat de combinatie van key en value uniek is per observatie,
 maar ook dat die combinatie **zoveel mogelijk** overeenkomt met de Aquo-termen, maar die combinatie moet ook voorkomen in de data van het referentie-endpoint.
 
-De keys moeten altijd conform de [DD API V3 definitielijst voor parameters](./definitions/ContextDefinitions.csv) zijn.
+De keys moeten altijd conform de [DD API V3 definitielijst voor parameters](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/definitions/ContextDefinitions.csv) zijn.
 
 ## Metadata
 
 Metadata bevat alle extra informatie over de observatie, die niet gestandaardiseerd is, zoals ordernummer van een opdracht.
 
-De keys moeten altijd conform de [DD API V3 definitielijst voor metadata](./definitions/MetadataDefinitions.csv) zijn.
+De keys moeten altijd conform de [DD API V3 definitielijst voor metadata](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/tree/main/definitions/MetadataDefinitions.csv) zijn.
 
-Er is één verplichte waarde in Metadata: `modifiedOn`, wat aangeeft wat de laatste datum (aanmaak of wijziging) is in ISO8601 formaat.
+Er is één verplichte waarde in Metadata: `ModifiedOn`, wat aangeeft wat de laatste datum (aanmaak of wijziging) is in ISO8601 formaat.
 
 ## Result
 
@@ -105,11 +111,11 @@ Voor DD API V3 zijn er aan implementeren van een correcte CoverageJSON een aanta
 - Voor sensoren wordt aangeraden om een tijdreeks te hebben met de naam van een Aquo waarnemingssoort.
   Dit zorgt ervoor dat eenvoudig een selectie kan plaatsvinden.
 - PhenomenonTime/BeginPosition en PhenomenonTime/EndPosition moeten overeenkomen met het datum-bereik van tenminste één van de tijdreeksen.
-- Metadata/ModifiedOn moet overeenkomen met de laatste wijzigingsdatum van de data.
+- Metadata/ModifiedOn **moet** overeenkomen met de laatste wijzigingsdatum van de data.
 
 
 ## DD API V3 Observation UML
-![Class diagram Observations](./media/DD-API-V3-observations-model.svg)
+![Class diagram Observations](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/raw/refs/heads/main/media/DD-API-V3-observations-model.svg)
 <figure>
 <figcaption>DD API V3 Observation UML</figcaption>
 </figure>

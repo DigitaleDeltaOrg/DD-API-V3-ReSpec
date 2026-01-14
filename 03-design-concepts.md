@@ -40,7 +40,7 @@ De specificatie beschrijft een standaard subset van OData die gebruikt moet word
 
 Deze subset is gekozen om de implementatie eenvoudiger te maken en om ruimte voor interpretatieverschillen tussen verschillende implementaties te verminderen.
 
-Voor meer details, zie [OData subset](06-odata-subset.md).
+Voor meer details, zie [OData subset](07-odata-subset.md).
 
 ## Semantische Uitwisselbaarheid
 

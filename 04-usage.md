@@ -8,22 +8,22 @@ Het verschil zit in de data representatie. Beiden gebruiken de standaard OData r
 
 ## Endpoint /v3/odata/observations
 
-Dit endpoint wordt gebruikt om de observaties op te halen. Het [observatiemodel](04-data-models-observation.md) beschrijft de structuur en eigenschappen.
-Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](08-observations.md).
+Dit endpoint wordt gebruikt om de observaties op te halen. Het [observatiemodel](05-data-models-observation.md) beschrijft de structuur en eigenschappen.
+Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](09-observations.md).
 
 ## Endpoint /v3/odata/references
 
 Dit endpoint wordt gebruikt om de referenties (kennis van het systeem, zoals parameters, grootheden, compartimenten, meetobjecten) op te halen.
-Het [referentiemodel](05-data-models-reference.md) beschrijft de structuur en eigenschappen.
-Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](09-references.md).
+Het [referentiemodel](06-data-models-reference.md) beschrijft de structuur en eigenschappen.
+Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](10-references.md).
 
 ## GET en POST
 
-De endpoints moeten `GET` ondersteunen.
+De endpoints **MOETEN** `GET` ondersteunen.
 
-`POST` is optioneel en mag alleen worden gebruikt voor zoeken met lange filters. 
+`POST` is optioneel en **mag** alleen worden gebruikt voor zoeken met lange filters. 
 
-De body van het request moet volledige query string bevatten, dus alles na de `?` in de URL.
+De body van het `POST` request **MOET** de volledige query string bevatten, dus alles na de `?` in de URL.
 
 `GET` is de aanbevolen methode.
 
@@ -42,8 +42,8 @@ De parameter `$top` geeft het aantal te retourneren entiteiten binnen de value a
 
 Standaard geeft DD API V3 alle responses terug in ETRS89 ([[EPSG]]:4258).
 
-Een ander coördinatenstelsel kan worden gevraagd via de Accept-Crs header. 
-De server moet de data dan converteren naar het gevraagde CRS (indien de server het coördinatenstelsel ondersteund) 
+Een ander coördinatenstelsel **kan** worden gevraagd via de Accept-Crs header. 
+De server **MOET** de data dan converteren naar het gevraagde CRS _(indien de server het coördinatenstelsel ondersteund)_ 
 en in de response header Content-Crs opnemen in welk CRS de data is teruggegeven.
 
 Tenminste de volgende CRS's worden ondersteund:
@@ -53,7 +53,7 @@ Tenminste de volgende CRS's worden ondersteund:
 * ETRS89/31N ([[EPSG]]:4936) in meters
 * RD New ([[EPSG]]:28992) in meters
 
-De waarde van Accept-Crs (en de Content-Crs in de response) moet `[[EPSG]]:xxxx` zijn, waarbij `xxxx` de [[EPSG]]-code is.
+De waarde van Accept-Crs (en de Content-Crs in de response) **MOET** `[[EPSG]]:xxxx` zijn, waarbij `xxxx` de [[EPSG]]-code is.
 
 ## Beveiliging
 
@@ -71,3 +71,17 @@ De volgende methoden zijn toegestaan:
 Authenticatie hoeft niet altijd vereist te worden: diensten die uitsluitend publieke data leveren, 
 kunnen zonder authenticatie worden gebruikt.
 
+## Versiebeheer en Capabilities
+
+Om clients te helpen bij het ontdekken van ondersteunde functionaliteiten, **MOET** een server bij elke response de header `API-Version` meesturen.
+
+### X-DD-Capabilities
+Voor implementaties die de optionele V3.1 extensies ondersteunen, **MOET** de server de header `X-DD-Capabilities` meesturen. Deze header bevat een door komma's gescheiden lijst van actieve extensies.
+
+Mogelijke waarden:
+- `pubsub`: Ondersteuning voor het `/subscriptions` endpoint.
+- `searchprofiles`: Ondersteuning voor zoekprofielen via `/searchprofiles`.
+- `resultprofile`: Ondersteuning voor de `resultprofile` parameter.
+
+**Voorbeeld:**
+`X-DD-Capabilities: searchprofiles, resultprofile, pubsub`

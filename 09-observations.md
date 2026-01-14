@@ -18,26 +18,26 @@ Parameter bevat alle eigenschappen die de observatie verder specificeren, zoals:
 
 ## Voorbeeld 1: Alle observaties voor een specifieke meetlocatie
 
-```GET
-/v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE'
+```http request
+GET v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE'
 ```
 
 ## Voorbeeld 2: Alle observaties voor een specifieke meetlocatie en compartiment en parameter zuurstofgehalte
 
-```GET
-/v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE' and Parameter/Compartment eq 'OW' and Parameter/Parameter eq 'O2'
+```http request
+GET /v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE' and Parameter/Compartment eq 'OW' and Parameter/Parameter eq 'O2'
 ```
 
 ## Voorbeeld 3: Alle observaties voor een specifieke meetlocatie, compartiment en grootheid in een bepaalde periode
 
-```GET
-/v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE' and Parameter/Compartment eq 'OW' and Parameter/Quantity eq 'WATHTE' and ResultTime ge 2023-01-01T00:00:00Z and ResultTime le 2023-01-31T23:59:59Z
+```http request
+GET /v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE' and Parameter/Compartment eq 'OW' and Parameter/Quantity eq 'WATHTE' and ResultTime ge 2023-01-01T00:00:00Z and ResultTime le 2023-01-31T23:59:59Z
 ```
 
 ## Voorbeeld 4: Alle observaties voor een specifieke meetlocatie, compartiment en grootheid in een bepaalde periode
 
-```GET
-/v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE' and Parameter/Compartment eq 'OW' and Parameter/Quantity eq 'WATHTE' and year(ResultTime) eq 2023 and month(ResultTime) eq 1
+```http request
+GET /v3/odata/observations?$filter=Foi/Code eq 'AMSRKNE' and Parameter/Compartment eq 'OW' and Parameter/Quantity eq 'WATHTE' and year(ResultTime) eq 2023 and month(ResultTime) eq 1
 ```
 
 Het antwoord (response) heeft altijd dezelfde structuur, ongeacht de gebruikte filters:

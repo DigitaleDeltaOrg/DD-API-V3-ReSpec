@@ -89,8 +89,6 @@ De blauwdruk is essentieel voor:
 - Data-analisten die gegevens willen combineren
 - Data scientists die water-gerelateerde datasets willen analyseren
 
-Hoofdstuk 7 beschrijft hoe een implementatie kan worden opgezet. Dit is alleen verplicht voor ontwikkelaars die een implementatie van de DD API V3 specificatie willen maken.
-
 ## Status van dit document
 
 ### Leeswijzer
@@ -118,3 +116,5 @@ Deze specificatie hanteert [Semantic Versioning](https://semver.org/lang/nl/) (M
 Iedere wijziging in de specificatie, het datamodel of de API wordt vastgelegd in een changelog volgens de semver-regels. 
 
 Breaking changes worden alleen doorgevoerd bij verhoging van de MAJOR versienummer.
+
+URL's gebruiken alleen *Major* versienummers.
