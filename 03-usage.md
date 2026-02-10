@@ -50,7 +50,7 @@ Tenminste de volgende CRS's worden ondersteund:
 
 * ETRS89 ([[EPSG]]:4258) in graden
 * WGS84 ([[EPSG]]:4326) in graden
-* ETRS89/31N ([[EPSG]]:4936) in meters
+* ETRS89/31N ([[EPSG]]:25831) in meters
 * RD New ([[EPSG]]:28992) in meters
 
 De waarde van Accept-Crs (en de Content-Crs in de response) moet `[[EPSG]]:xxxx` zijn, waarbij `xxxx` de [[EPSG]]-code is.
