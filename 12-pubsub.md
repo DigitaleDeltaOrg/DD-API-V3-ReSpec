@@ -15,7 +15,7 @@ Een server die deze extensie ondersteunt, **MOET** de `API-Version` header met w
 - **Subscription (abonnement)** — Een server-beheerde resource die aangeeft welke gebeurtenissen een client wil ontvangen.
 - **Trigger** — Een OData-gebaseerde conditie (filter) die bepaalt wanneer een melding wordt gegenereerd.
 - **Delivery Method (leveringsmethode)** — De techniek waarmee meldingen worden afgeleverd (SSE, push, MQTT, etc.).
-- **Event** — Een melding die Observation-data bevat conform het [Observation model](05-data-models-observation.md).
+- **Event** — Een melding die Observation-data bevat conform het [Observation model](#virtuele-datamodellen-observation).
 
 
 ## Content Negotiation (leveringsmodel)

@@ -188,10 +188,10 @@ Onderstaande tabel vat de normatieve eisen samen waar een implementatie aan moet
 | **REQ-02** | Metadata        | De server **MOET** een OData `$metadata` document serveren op de root van het odata endpoint.                                                                  |
 | **REQ-03** | Methoden        | De server **MOET** de `GET` methode ondersteunen; `POST` **mag** worden ondersteund voor zoekopdrachten.                                                       |
 | **REQ-04** | Paginering      | Gebruik van `$skiptoken` is **verplicht** voor paginering; `$skip` wordt **niet ondersteund**.                                                                 |
-| **REQ-05** | OData Subset    | De server **MOET** de query-opties `$filter`, `$top`, `$select`, `$count` en `$skiptoken` ondersteunen zoals beschreven in [OData Subset](07-odata-subset.md). |
+| **REQ-05** | OData Subset    | De server **MOET** de query-opties `$filter`, `$top`, `$select`, `$count` en `$skiptoken` ondersteunen zoals beschreven in [OData Subset](#odata-subset). |
 | **REQ-06** | Geografie       | Alleen de geografische functies `distance()` en `intersects()` **mogen<** worden gebruikt.                                                                     |
 | **REQ-07** | CRS             | De server **MOET** de `Accept-Crs` header ondersteunen en de `Content-Crs` header meesturen in de response wanneer het request een Accept-Crs header bevat.    |
-| **REQ-08** | Datamodel       | De JSON-response **MOET** voldoen aan de [datamodellen](05-data-models-observation.md) en het bijbehorende JSON Schema.                                        |
+| **REQ-08** | Datamodel       | De JSON-response **MOET** voldoen aan de [datamodellen](#virtuele-datamodellen-observation) en het bijbehorende JSON Schema.                                        |
 | **REQ-09** | ModifiedOn      | Het metadata veld `modifiedOn` **MOET** aanwezig zijn bij elke observatie.                                                                                     |
 | **REQ-10** | Foutafhandeling | Bij fouten **MOET** de server reageren met de juiste [HTTP statuscodes](08-implementation.md#foutmeldingen).                                                   |
 | **REQ-11** | CoverageJSON    | Indien het resultaat een tijdreeks is, **MOET** dit in een valide CoverageJSON formaat worden aangeboden.                                                      |

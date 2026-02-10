@@ -8,14 +8,14 @@ Het verschil zit in de data representatie. Beiden gebruiken de standaard OData r
 
 ## Endpoint /v3/odata/observations
 
-Dit endpoint wordt gebruikt om de observaties op te halen. Het [observatiemodel](05-data-models-observation.md) beschrijft de structuur en eigenschappen.
-Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](09-observations.md).
+Dit endpoint wordt gebruikt om de observaties op te halen. Het [observatiemodel](#virtuele-datamodellen-observation) beschrijft de structuur en eigenschappen.
+Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](#observation-zoekvoorbeelden).
 
 ## Endpoint /v3/odata/references
 
 Dit endpoint wordt gebruikt om de referenties (kennis van het systeem, zoals parameters, grootheden, compartimenten, meetobjecten) op te halen.
-Het [referentiemodel](06-data-models-reference.md) beschrijft de structuur en eigenschappen.
-Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](10-references.md).
+Het [referentiemodel](#virtuele-datamodellen-reference) beschrijft de structuur en eigenschappen.
+Voorbeelden van het gebruik van dit endpoint zijn te vinden in de [profielen](#reference-zoekvoorbeelden).
 
 ## GET en POST
 
@@ -50,7 +50,7 @@ Tenminste de volgende CRS's worden ondersteund:
 
 * ETRS89 ([[EPSG]]:4258) in graden
 * WGS84 ([[EPSG]]:4326) in graden
-* ETRS89/31N ([[EPSG]]:4936) in meters
+* ETRS89/31N ([[EPSG]]:25831) in meters
 * RD New ([[EPSG]]:28992) in meters
 
 De waarde van Accept-Crs (en de Content-Crs in de response) **MOET** `[[EPSG]]:xxxx` zijn, waarbij `xxxx` de [[EPSG]]-code is.
