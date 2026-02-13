@@ -6,11 +6,11 @@ Onderstaande lijst bevat bekende publieke endpoints die voldoen aan de DD API V3
 |:--------------------------------------------|:---------------------------------------------|:---------------------------------------|:-----------------|:--------------------------------------|--------| 
 | **EcoSys (AquaDesk)** (https://ecosys.nl)   | Rijkswaterstaat, verschillende Waterschappen | Waterkwaliteit                         | Productie        | https://ddapi.aquadesk.nl/v3/odata/   | v3     |
 | **Rijkswaterstaat** (https://rws.nl)        | RWS, Sovon, WMR (Wageningen Marine Research) | Klein biologisch, vissen en vogels     | Productie        | https://ddapi-rws.ecosys.nl/v3/odata/ | v3     |
-| **Aquon** (https://aquon.nl)                | Aangesloten Waterschappen                    | Laboratoriumanalyses en veldmetingen   | Productie        | -                                     | v3     |
-| **Aquon SampleManager**  (https://aquon.nl) | Aangesloten Waterschappen                    | Laboratoriumanalyses via SampleManager | Productie        | -                                     | v3     |
-| **Informatiehuis water** (https://ihw.nl)   | Alle waterschappen en Rijkswaterstaat        | Aquo-Kit data                          | Proof of Concept | -                                     | v3     |
-| **MuniSense** (https://munisense.nl)        | Aangesloten waterschappen                    | Grondwatersensordata                   | Beta             | -                                     | v3     |
-| **Blik-Sensing** (https://blik-sensing.nl)  | Aangesloten waterschappen                    | Grondwatersensordata                   | Beta             | -                                     | v3     |
+| **Aquon** (https://aquon.nl)                | Aangesloten Waterschappen                    | Laboratoriumanalyses en veldmetingen   | Productie        | Niet publiek                          | v3     |
+| **Aquon SampleManager**  (https://aquon.nl) | Aangesloten Waterschappen                    | Laboratoriumanalyses via SampleManager | Productie        | Niet publiek                          | v3     |
+| **Informatiehuis water** (https://ihw.nl)   | Alle waterschappen en Rijkswaterstaat        | Aquo-Kit data                          | Proof of Concept | Niet publiek                          | v3     |
+| **MuniSense** (https://munisense.nl)        | Aangesloten waterschappen                    | Grondwatersensordata                   | Beta             | Niet publiek                          | v3     |
+| **Blik-Sensing** (https://blik-sensing.nl)  | Aangesloten waterschappen                    | Grondwatersensordata                   | Beta             | Niet publiek                          | v3     |
 
 Daarnaast heeft FEWS de mogelijkheid gekregen om DD API V3 endpoints te gebruiken als data bron voor CoverageJSON-data.
 

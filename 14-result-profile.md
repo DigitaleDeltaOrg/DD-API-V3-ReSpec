@@ -1,6 +1,6 @@
 ﻿## Resultaatprofiel (V3.1 extensie)
 
-<aside class="advisement" title="In ontwikkeling">
+<aside class="advisement" title="Status: In ontwikkeling">
 Deze functionaliteit is onderdeel van V3.1 en stelt clients in staat om de representatie van het resultaat te forceren.
 </aside>
 

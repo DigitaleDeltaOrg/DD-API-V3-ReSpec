@@ -72,15 +72,28 @@ Er is één verplichte waarde in Metadata: `ModifiedOn`, wat aangeeft wat de laa
 
 Result is het resultaat van een observatie.
 
-Het formaat van Result is afhankelijk de type van de observatie.
+Het formaat van Result is afhankelijk de type van de observatie.  
 
-| Eigenschap | Type             | Omschrijving                                                                      |
-|------------|------------------|-----------------------------------------------------------------------------------|
-| **Id**     | string           | Uniek Id van de meetlocatie.                                                      |
-| Truth      | string           | De waarde van de observatie, indien Type is Truth. Mogelijke waarden: True, False |
-| Vocab      | [Vocab](#vocab)  | De waarde van de observatie, indien Type is Vocab.                                |
-| Count      | integer          | De waarde van de observatie, indien Type is Count. Een geteld, geheel getal.      |
-| Coverage   | [[CoverageJSON]] | De waarde van de observatie, indien Type is Coverage.                             |
+| Eigenschap | Type                | Omschrijving                                                                 |
+|------------|---------------------|------------------------------------------------------------------------------|
+| **Id**     | string              | Uniek Id van het resultaat (_mag_ gelijk zijn aan het Id van de observatie). |
+| Truth      | string              | Wanneer het resultaat een waarheid representeerd (waar/onwaar, true/false).  |
+| Vocab      | [Vocab](#vocab)     | Wanneer het een `typering` betreft.                                          |
+| Count      | integer             | Pure 'telling', bijvoorbeeld onder een microscoop, altijd een heel getal.    |
+| Coverage   | [[CoverageJSON]]    | Tijdreeksen of verwachtingen.                                                |
+| Measure    | [Measure](#measure) | Waarde/eenheid combinatie.                                                   |
+
+#### Hulp bij interpretatie voor IM Metingen
+
+##### Wanneer het een IM Metingen `Typering` betreft
+
+Gebruik type [Vocab](#vocab). De `Vocabulary` daarin wordt dan gelijk aan de code van de typering en `Verb` wordt gelijk aan de alfanumerieke waarde die binnen die typering gebruikt kan worden.
+Indien deze definitie van Aquo afkomstig is, dan _mag_ de namespace leeg blijven. Anders moet die gevuld worden met de code voor het bronsysteem die de typering definiëert.
+
+##### Wanneer het een IM Metingen `Grootheid`
+
+- Wanneer het een fysieke telling betreft (dus gehele getallen), dan _mag_ het type `Count` worden gebruikt. Dit impliceert dat de eenheid volgens Aquo termen 'AANTL' (Aantal) is.
+- Gebruik anders type [Measure](#measure).
 
 ## Measure
 
@@ -96,11 +109,11 @@ Gemeten waarde met eenheid.
 
 Onderwerp/waarde combinatie (classificatie).
 
-| Eigenschap     | Type         | Omschrijving                               |
-|----------------|--------------|--------------------------------------------|
-| **Vocabulary** | string       | Woordenboek (naam van de Aquo domeintabel) |
-| **Verb**       | string       | Woord (definitie) binnen de vocabulary.    |
-| Namespace      | string       | Bron voor de definitie. Indien leeg, Aquo. |
+| Eigenschap     | Type   | Omschrijving                               |
+|----------------|--------|--------------------------------------------|
+| **Vocabulary** | string | Woordenboek (naam van de Aquo domeintabel) |
+| **Verb**       | string | Woord (definitie) binnen de vocabulary.    |
+| Namespace      | string | Bron voor de definitie. Indien leeg, Aquo. |
 
 
 ## CoverageJSON
