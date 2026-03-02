@@ -10,6 +10,9 @@ Dit hoofdstuk beschrijft het datamodel van DD API V3, gebaseerd op een subset va
 
 Dit beschrijft de JSON-representatie van een observatie.
 
+
+Het formaat dat DD API V3 gebruikt is een **technisch uitwisselingsformaat** in JSON encoding, met JSON Schema als normatieve specificatie. Dit betreft niveau 4 (fysiek/technisch datamodel) volgens het MIM-lagenmodel, wat expliciet buiten de scope van MIM valt. MIM is bedoeld voor conceptuele en logische informatiemodellen (niveau 1-3), niet voor REST API-berichtformaten.
+
 Vet is verplicht. Italic (schuingedrukt) is verplicht onder bepaalde omstandigheden.
 
 Een JSON-schema voor het observation type is [hier](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/raw/refs/heads/main/main/definitions/v3.0/json-schema/observation.schema.json) beschikbaar.
@@ -20,16 +23,16 @@ Het gehele OData response in JSON-schema voor het `/v3/odata/observations` endpo
 Observation beschrijft de omstandigheden en de resultaten van een observatie.
 
 
-| Eigenschap         | Type                    | Omschrijving                                                                                 |
-|--------------------|-------------------------|----------------------------------------------------------------------------------------------|
-| **Id**             | string                  | Unieke id van de observatie.                                                                 |
-| **ResultTime**     | string                  | Datum en tijd waarop het resultaat beschikbaar is gekomen, in ISO8601 formaat. Het geeft aan |
-| **PhenomenonTime** | [Tm_Period](#Tm_Period) | Periode waarin is gemeten/bemonsterd. Begin- en EndPosition zijn in ISO8601 formaat.         |
-| ValidTime          | [Tm_Period](#Tm_Period) | Geldigheidsperiode van de data.                                                              |
-| **FoI**            | [FoI](#FoI)             | Feature of Interest: in DD API V3 altijd geolocatie van de observatie.                       |
-| **Parameter**      | [Parameter](#parameter) | Beschrijft de omstandigheden van de observatie.                                              |
-| **Metadata**       | [Metadata](#metadata)   | Extra informatie over de observatie.                                                         |
-| **Result**         | [Result](#result)       | Resultaat.                                                                                   |
+| Eigenschap         | Type                    | Omschrijving                                                                                                                                        |
+|--------------------|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Id**             | string                  | Unieke id van de observatie.                                                                                                                        |
+| **ResultTime**     | string                  | Datum en tijd waarop het resultaat beschikbaar is gekomen, in ISO8601 formaat. Het geeft aan wanneer het resultaat is opgenomen in het bronsysteem. |
+| **PhenomenonTime** | [Tm_Period](#Tm_Period) | Periode waarin is gemeten/bemonsterd. Begin- en EndPosition zijn in ISO8601 formaat.                                                                |
+| ValidTime          | [Tm_Period](#Tm_Period) | Geldigheidsperiode van de data.                                                                                                                     |
+| **FoI**            | [FoI](#FoI)             | Feature of Interest: in DD API V3 altijd geolocatie van de observatie. Geeft aan _waar_ gemeten is.                                                 |
+| **Parameter**      | [Parameter](#parameter) | Beschrijft de omstandigheden van de observatie: _wat_ en _waarmee_ er gemeten is.                                                                   |
+| **Metadata**       | [Metadata](#metadata)   | Extra informatie over de observatie, ongeklassificeerd, zoals ordernummer.                                                                          |
+| **Result**         | [Result](#result)       | Resultaat: de _uitkomst_ van de observatie.                                                                                                         |
 
 ## Tm_Period
 
@@ -85,14 +88,16 @@ Het formaat van Result is afhankelijk de type van de observatie.
 
 #### Hulp bij interpretatie voor IM Metingen
 
+IM Metingen hanteert een andere terminologie dan [[OM&S]]. Waar IM Metingen specifieke velden heeft voor typering en grootheid (en alfanumerieke waarde), zijn dat in [[OM&S]] andere soorten Results.  
+
 ##### Wanneer het een IM Metingen `Typering` betreft
 
-Gebruik type [Vocab](#vocab). De `Vocabulary` daarin wordt dan gelijk aan de code van de typering en `Verb` wordt gelijk aan de alfanumerieke waarde die binnen die typering gebruikt kan worden.
+Gebruik type [Vocab](#vocab). De `Vocabulary` (woordenlijst) daarin wordt dan gelijk aan de code van de typering en `Verb` (woord) wordt gelijk aan de alfanumerieke waarde die binnen die typering gebruikt kan worden.
 Indien deze definitie van Aquo afkomstig is, dan _mag_ de namespace leeg blijven. Anders moet die gevuld worden met de code voor het bronsysteem die de typering definiëert.
 
-##### Wanneer het een IM Metingen `Grootheid`
+##### Wanneer het een IM Metingen `Grootheid` betreft
 
-- Wanneer het een fysieke telling betreft (dus gehele getallen), dan _mag_ het type `Count` worden gebruikt. Dit impliceert dat de eenheid volgens Aquo termen 'AANTL' (Aantal) is.
+- Wanneer het een fysieke telling betreft (dus gehele getallen), dan _mag_ het type `Count` worden gebruikt. Dit impliceert dat de eenheid volgens Aquo termen `AANTL` (Aantal) is.
 - Gebruik anders type [Measure](#measure).
 
 ## Measure
@@ -128,7 +133,8 @@ Voor DD API V3 zijn er aan implementeren van een correcte CoverageJSON een aanta
 
 
 ## DD API V3 Observation UML
-![Class diagram Observations](https://github.com/DigitaleDeltaOrg/DD-API-V3-ReSpec/raw/refs/heads/main/media/DD-API-V3-observations-model.svg)
+
+![Class diagram Observations](media/DD-API-V3-observations-model.svg)
 <figure>
-<figcaption>DD API V3 Observation UML</figcaption>
+<figcaption>DD API V3 Observation Model - Illustratief UML diagram</figcaption>
 </figure>

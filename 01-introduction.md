@@ -1,8 +1,8 @@
 # Introductie
 
-DD API V3 is een [[API]]-specificatie van Digitale Delta, onder beheer van [[IHW]].
+DD API V3 is een [[API]]-specificatie van Digitale Delta.
 
-Het is een *blauwdruk* voor het uitwisselen van water-gerelateerde metingen ([[Observatie]]s), met een focus op uitwisseling.
+Het is de opvolger van zowel de DD API V2 (niet langer ondersteund) als de DD ECO API.
 
 De [[API]] beschikt niet over features zoals toevoegen, wijzigen of verwijderen van data.
 
@@ -14,17 +14,17 @@ Gebruikers kunnen hierdoor eenvoudig data van verschillende bronnen combineren e
 
 [[Digitale Delta]]: Een initiatief van Nederlandse waterbeheerders gericht op het verbeteren van de digitale gegevensuitwisseling in het waterdomein, beheerd door [[IHW]].
 
-[[API]]: Application Programming Interface, een set van regels en protocollen voor het bouwen en integreren van softwaretoepassingen.
+[[API]]: Application Programming Interface,  een set regels waarmee verschillende softwareprogramma's, apps of systemen met elkaar kunnen communiceren en gegevens kunnen uitwisselen.
 
 [[RESTful]]: Representational State Transfer, een architecturale stijl voor gedistribueerde systemen die gebruik maakt van standaard HTTP-methoden.
 
-[[Observatie]]: Een meting of waarneming van een bepaald fenomeen op een specifieke locatie en tijd. De context van de observatie wordt beschreven met behulp van gestandaardiseerde vocabularia.
+[[Observatie]]: Een meting, waarneming of verwachting van een bepaald fenomeen op een specifieke locatie (of gebied) en tijd(periode. De context van de observatie wordt beschreven met behulp van gestandaardiseerde vocabularia.
 
 [[IHW]]: [Informatiehuis Water](https://ihw.nl) is een samenwerkingsverband van Nederlandse waterbeheerders dat zich richt op het verbeteren van informatie-uitwisseling en -beheer in het waterdomein.
 
 [[Aquo]]: Een initiatief van Nederlandse waterbeheerders dat gestandaardiseerde vocabularia biedt voor het waterdomein, beheerd door [IHW], de [Aquo standaard](https://aquo.nl).
 
-[[OMS]]: Observation, Measurement & Samples, een standaard van de Open Geospatial Consortium (OGC) voor het modelleren en uitwisselen van observatiegegevens.
+[[OM&S]]: Observation, Measurement & Samples, een standaard van de Open Geospatial Consortium (OGC) voor het modelleren en uitwisselen van observatiegegevens.
 
 [[OData]]: [Open Data Protocol](https://www.odata.org) is een standaard voor het bouwen en consumeren van RESTful API`s.
 
@@ -46,7 +46,7 @@ Gebruikers kunnen hierdoor eenvoudig data van verschillende bronnen combineren e
 
 [[WGS84]]: World Geodetic System 1984, een wereldwijd coördinatenstelsel dat wordt gebruikt voor gps.
 
-[[RD New]]: Rijksdriehoeksmeting, een coördinatenstelsel dat wordt gebruikt in Nederland.
+[[RD New]]: Rijksdriehoeksstelsel, een coördinatenstelsel dat wordt gebruikt in Nederland.
 
 [[mTLS]]: Mutual Transport Layer Security, een beveiligingsprotocol dat gebruikmaakt van certificaten voor wederzijdse authenticatie.
 
@@ -95,15 +95,15 @@ De blauwdruk is essentieel voor:
 
 | Status      | Description & Link                    |
 |-------------|---------------------------------------|
-| Informative | Inleiding NL API Strategie            |
-| Informative | Architectuur NL API Strategie         |
-| Informative | API Design Rules (ADR v2.0)           |
-| Normative   | [[OpenAPI 3.0]]                       |
-| Normative   | Module Transport Security module v1.0 |
-| Normative   | [[EPSG]]                              |
-| Normative   | [[OData]]                             |
-| Normative   | [[OM&S]]                              |
-| Normative   | [[CoverageJSON]]                      |
+| Informatief | Inleiding NL API Strategie            |
+| Informatief | Architectuur NL API Strategie         |
+| Informatief | API Design Rules (ADR v2.0)           |
+| Normatief   | [[OpenAPI 3.0]]                       |
+| Normatief   | Module Transport Security module v1.0 |
+| Normatief   | [[EPSG]]                              |
+| Normatief   | [[OData]]                             |
+| Normatief   | [[OM&S]]                              |
+| Normatief   | [[CoverageJSON]]                      |
 
 Alvorens dit document te lezen, is het aan te raden kennis te nemen van de informatieve documenten in bovenstaande lijst.
 

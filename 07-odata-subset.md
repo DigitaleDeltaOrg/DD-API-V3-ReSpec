@@ -27,13 +27,18 @@ De volgende OData eigenschappen worden *niet* ondersteund:
 
 ## Gebruik `$skiptoken`, _niet_ `$skip`
 
-Reden is dat `$skip` inefficiënt is bij grote datasets, omdat de server alle records moet doorlopen om de juiste records te vinden.
-
-Dat resulteert in progressief trager wordende responses naarmate de `$skip` waarde groter wordt.
+Reden is dat `$skip` inefficiënt is bij grote datasets (en naarmate grotere pagina's worden gekozen), omdat de server alle records moet doorlopen om de juiste records te vinden.
 
 Met `$skiptoken` kan de server direct naar de juiste plek in de dataset springen. Het wordt via de `@odata.nextLink property` in de response doorgegeven.
 In `$skiptoken` wordt meestal het laatste Id van de vorige response gebruikt, maar het kan ook een andere waarde zijn die de server gebruikt om de juiste plek in de dataset te vinden.
 Dit moet uiteraard in combinatie met `$filter` gebruikt worden, zodat de server weet of de zoekopdracht hetzelfde blijft.
+
+`$skiptoken` heeft enige limieten:
+
+- Pagina's kunnen niet worden overgeslagen
+- Er kan niet naar een vorige pagina terug worden gegaan
+
+Dit zorgt er echter voor dat de data consistent is: er kunnen niet resultaten worden overgeslagen of vergeten.
 
 `$top` bepaalt het maximum aantal entiteiten (zoals Observations of References) in de `value` array van de response. 
 Bij een tijdreeks (CoverageJSON) telt de gehele tijdreeks als één enkel item, ongeacht het aantal meetwaarden daarin.
@@ -44,6 +49,9 @@ In plaats van de 'standaard' OData geografische functies, zijn er twee nieuwe fu
 
 - `$filter=distance(wkt='POINT(5.387 52.156)') lt 1000`
 - `$filter=intersects(wkt='POINT(5.387 52.156)') eq true`
+
+Omdat de geografie in de dataset ook een gebied kan zijn, wordt de afstand tussen het punt en het gebied berekend. 
+Als het punt binnen het gebied ligt, is de afstand 0. Ditzelfde geldt ook wanneer de geografie een enkel punt of een lijn is.
 
 De logica hiervan is:
 

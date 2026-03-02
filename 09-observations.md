@@ -16,6 +16,9 @@ Parameter bevat alle eigenschappen die de observatie verder specificeren, zoals:
 - Parameter: Aquo-code voor parameter, behalve Grootheid en typering (bijv. O2, Cl, Abies alba)
 - Capacity: Aquo-code voor hoedanigheid van de observatie
 
+Note: In V4 wordt `Parameter` binnen het Parameter-blok hernoemd naar `observedParameter`.
+Eventueel kan een 'alias' worden gebruikt om beiden te kunnen blijven gebruiken.
+
 ## Voorbeeld 1: Alle observaties voor een specifieke meetlocatie
 
 ```http request
@@ -161,7 +164,7 @@ Hieronder een voorbeeld van een tijdreeks met 6 tijdstippen op een enkele locati
       "type": "Parameter",
       "observedProperty": {
         "label": {
-          "en": "Debiet"
+          "nl": "Debiet"
         }
       }
     }

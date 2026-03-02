@@ -21,22 +21,18 @@ Door die representatie is het mogelijk om data uit verschillende bronnen op een 
 De specificatie legt *niet* vast hoe data opgeslagen moet worden, maar beschrijft hoe data aangeboden moet worden.
 Het EDM is plat en eenvoudig, waardoor het gemakkelijk te begrijpen en te implementeren is.
 
-## Subset van OM&S
+## Subset van [[OM&S]]
 
-De specificatie gebruikt een subset van de OM&S standaard.
+De specificatie gebruikt een subset van de [[OM&S]] standaard.
 
 De standaard zelf is zeer uitgebreid en flexibel, maar daardoor ook complex en door verschillende uitbreidingen en interpretaties, moeilijk uitwisselbaar.
 
 Door gebruik te maken van een subset en profielen, wordt de complexiteit verminderd en wordt interoperabiliteit vergroot.
 
 
-## Subset van OData V4
+## Subset van [[OData]] V4
 
-Een veelgehoorde klacht over [[OData]] is dat het groot is en complex te implementeren. 
-
-Ook de standaard programmabibliotheken hiervoor zijn vaak gericht op bepaalde technologieën en daardoor niet universeel bruikbaar.
-
-De specificatie beschrijft een standaard subset van OData die gebruikt moet worden, met een aantal uitbreidingen specifiek voor waterdata in Nederland.
+De specificatie beschrijft een standaard subset van [[OData]] die gebruikt moet worden, met een aantal uitbreidingen specifiek voor waterdata in Nederland.
 
 Deze subset is gekozen om de implementatie eenvoudiger te maken en om ruimte voor interpretatieverschillen tussen verschillende implementaties te verminderen.
 
@@ -56,7 +52,7 @@ en biedt een gestandaardiseerde set van vocabularia voor het waterdomein.
 
 Profielen geven aan welk soort responses een implementatie kan teruggeven.
 
-### Profiel FC-TR (tijdreeksen)
+### Profiel Fysisch/Chemisch als tijdreeksen
 
 Dit profiel is bedoeld voor fysisch/chemische observaties die als tijdreeksen worden teruggegeven.
 Door de aard van de metingen (continu) zijn deze tijdreeksen.
@@ -78,7 +74,7 @@ Optioneel, maar sterk aanbevolen:
 
 De result van de responses zijn in [[CoverageJSON]] formaat zijn.
 
-### Profiel FC-MS (losse metingen)
+### Profiel Fysisch/Chemisch als losse waarnemingen
 
 Dit profiel is bedoeld voor fysisch/chemische observaties die als losse metingen worden teruggegeven.
 
@@ -97,7 +93,7 @@ Optioneel, maar sterk aanbevolen:
 
 De result van de responses zijn primair in Measure formaat zijn (combinatie van eenheid en gemeten waarde).
 
-### Profiel ECO (losse metingen)
+### Profiel Ecologische waarnemingen
 
 Dit profiel is bedoeld voor ecologische observaties. Hier wordt veelvuldig veel biologische kenmerken gemeten en vastgelegd.
 
@@ -121,17 +117,4 @@ Zoveel mogelijk kenmerken moeten worden gevuld in Parameter, afhankelijk van de 
 vaak worden specifieke biologische kenmerken gemeten, zoals: soort, leeftijdsklasse, geslacht, etc., afhankelijk van het taxon dat geobserveerd wordt.
 
 De result van de responses zullen divers zijn: Measure, Count, Truth en Vocab.
-
-## Eenvoudig en Toegankelijk
-
-De specificatie is ontworpen met het oog op eenvoud en toegankelijkheid. 
-
-Het doel is om voor gebruikers toegang tot de API zo eenvoudig mogelijk te maken, zonder concessies te doen aan de functionaliteit.
-
-Voor ontwikkelaars is het doel om de specificatie begrijpelijk te maken en zo eenvoudig mogelijk te implementeren.
-
-Daarom specificeert de DD API V3 slechts twee endpoints:
-
-- één voor het ophalen van de observaties en 
-- één voor het ophalen van de kennis van het systeem (referenties).
 

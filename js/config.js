@@ -13,7 +13,7 @@ var respecConfig = {
     addSectionLinks: true,
     specType: "Standaard",
     license: "cc-by",
-    publishDate: "2021-07-05T00:00:00.000Z",
+    publishDate: "2026-01-05T00:00:00.000Z",
     version: "0.1.0",
     typeText: "DD API V3 specificatie",
     statusText: "Werkversie",
@@ -141,8 +141,7 @@ var respecConfig = {
         "WebSub": { title: "Een webprotocol voor het publiceren en abonneren op berichten in real-time.", href: "https://www.w3.org/TR/websub/" }
     },
     plugins: {
-        "core/data-include": {},
-        "mermaid": {}
+        "core/data-include": {}
     }
 };
 

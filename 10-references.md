@@ -1,4 +1,4 @@
-﻿# Reference zoekvoorbeelden
+﻿# Reference zoekvoorbeelden (Informaties)
 
 Hieronder staan enkele voorbeeld queries voor het opvragen van references via de DD API V3. Deze voorbeelden maken gebruik van OData filters en selecties.
 
@@ -7,10 +7,6 @@ Hieronder staan enkele voorbeeld queries voor het opvragen van references via de
 - Voor filteren voor meetobjecten, gebruik dan de `Foi`-eigenschap.
 - Voor filteren op parameters, grootheden, biologische kenmerken, etc. gebruik de `Parameter`-eigenschap.
 - Voor filteren op niet-gestandaardiseerde eigenschappen, gebruik de `Metadata`-eigenschap.
-- Voor filteren op tijd, gebruik `ResultTime`, `PhenomemonTime` en `ValidTime`-eigenschappen.
-    - `ResultTime` is de datum/tijd van het resultaat, dus wanneer de meting geregistreerd is.
-    - `PhenomenonTime` is de datum/tijd van het fenomeen, dus wanneer het fenomeen daadwerkelijk plaatsvond. Dit is een datumbereik, dus met een begin- en einddatum.
-    - `ValidTime` is de geldigheidsperiode van de data, dus wanneer de data geldig is. Dit is ook een datumbereik, dus met een begin- en einddatum.
 
 ### Alle observaties voor een specifieke meetlocatie
 
@@ -30,7 +26,7 @@ Een opmerking over coördinatenstelsels:
 - Het is aan de implementatie om de conversie van en naar ETRS89 te doen. Programmabibliotheken zoals NetTopologySuite (voor .NET) en JTS (voor Java) kunnen hierbij helpen.
 
 
-Note: de geografische zoeken werkt precies hetzelfde voor references als voor observations. Dat komt omdat beide entiteiten een geografisch attribuut hebben en er slechts één kan zijn per observatie of referentie.
+Note: geografische zoeken werkt precies hetzelfde voor references als voor observations. Dat komt omdat beide entiteiten een geografisch attribuut hebben en er slechts één kan zijn per observatie of referentie.
 
 De volgende lijst toont de minimaal ondersteunde coördinatenstelsels met hun EPSG-codes en eenheden:
 
@@ -38,7 +34,7 @@ De volgende lijst toont de minimaal ondersteunde coördinatenstelsels met hun EP
 |--------------------|------------|---------|
 | ETRS89             | EPSG:4258  | Graden  |
 | WGS84              | EPSG:4326  | Graden  |
-| ETRS89/31N         | EPSG:4936  | Meters  |
+| ETRS89/31N         | EPSG:25831 | Meters  |
 | RD New             | EPSG:28992 | Meters  |
 
 ### Alle observaties binnen een straal van 1000 meter van een punt (_let op: bij coördinatenstelsels die eenheid meters gebruiken_)

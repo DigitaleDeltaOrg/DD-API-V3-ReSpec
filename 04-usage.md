@@ -1,6 +1,6 @@
 ﻿# Gebruik
 
-Een DD API V3 heeft twee endpoints. Beide gebruikende dezelfde subset OData V4 voor zoeken en filteren. 
+Een DD API V3 heeft twee endpoints. Beide gebruiken dezelfde subset OData V4 voor zoeken en filteren. 
 
 Het verschil zit in de data representatie. Beiden gebruiken de standaard OData responses, maar de 'values' verschillen in model.
 
@@ -30,7 +30,15 @@ De body van het `POST` request **MOET** de volledige query string bevatten, dus 
 
 ## Paginering
 
-Data wordt in pagina's teruggegeven. De pagina grootte wordt bepaald door de implementatie. De specificatie adviseert minimaal 1000 items per pagina met een maximale grootte van 10000.
+Data wordt in pagina's teruggegeven. Een pagina bestaat uit de volgende onderdelen:
+
+- Een header (`@odata.count`)
+- Een array van entiteiten (`value`)
+- Een link naar de volgende pagina (`@odata.nextLink`)
+
+Paginagrootte beschrijft het aantal entiteiten dat in de `value` array wordt teruggegeven. Met andere woorden: dit zijn de aantal observaties in de `value` array.
+
+De pagina grootte wordt bepaald door de implementatie. De specificatie _adviseert_ minimaal 1000 items per pagina met een maximale grootte van 10000.
 De pagina grootte kan worden aangepast via de query parameter `$top`. 
 Indien de pagina grootte groter is dan de maximale grootte die de server accepteert, dan zal de server de pagina grootte automatisch verkleinen.
 
@@ -61,12 +69,12 @@ Welke authenticatiemethoden de API ondersteunt, is afhankelijk van de implementa
 
 De volgende methoden zijn toegestaan:
 
-| Methoden       | Beschrijving                                                                                              |
-|----------------|-----------------------------------------------------------------------------------------------------------|
-| mTLS           | Mutual TLS (certificaten)                                                                                 |
-| API Key        | Via X-API-KEY header, alleen in opvraag scenario's waarbij de identiteit van de gebruiker niet vereist is |
-| OAuth2         | OAuth2                                                                                                    |
-| OpenID Connect | OpenID Connect                                                                                            |
+| Methoden           | Beschrijving                                                                                              |
+|--------------------|-----------------------------------------------------------------------------------------------------------|
+| [[mTLS]]           | Mutual TLS (certificaten)                                                                                 |
+| [[API Key]]        | Via X-API-KEY header, alleen in opvraag scenario's waarbij de identiteit van de gebruiker niet vereist is |
+| [[OAuth2]]         | OAuth2                                                                                                    |
+| [[OpenID Connect]] | OpenID Connect                                                                                            |
 
 Authenticatie hoeft niet altijd vereist te worden: diensten die uitsluitend publieke data leveren, 
 kunnen zonder authenticatie worden gebruikt.
@@ -79,9 +87,9 @@ Om clients te helpen bij het ontdekken van ondersteunde functionaliteiten, **MOE
 Voor implementaties die de optionele V3.1 extensies ondersteunen, **MOET** de server de header `X-DD-Capabilities` meesturen. Deze header bevat een door komma's gescheiden lijst van actieve extensies.
 
 Mogelijke waarden:
-- `pubsub`: Ondersteuning voor het `/subscriptions` endpoint.
+- `subscriptionsb`: Ondersteuning voor het `/subscriptions` endpoint.
 - `searchprofiles`: Ondersteuning voor zoekprofielen via `/searchprofiles`.
-- `resultprofile`: Ondersteuning voor de `resultprofile` parameter.
+- `resultprofiles`: Ondersteuning voor resultaatprofielen via `/resultprofiles`.
 
 **Voorbeeld:**
-`X-DD-Capabilities: searchprofiles, resultprofile, pubsub`
+`X-DD-Capabilities: searchprofiles, resultprofiles, subscriptions`

@@ -11,8 +11,9 @@ Voor het .NET-platform zijn open-source componenten beschikbaar die de implement
 
 Verder is er een **implementatie-template** in ontwikkeling (.NET) voor DD API V3. 
 Deze template maakt gebruik van de beschikbare libraries om snel een volledige DD API V3 service op te zetten. 
-Als ontwikkelaar hoef je dan alleen nog de autorisatie in te regelen en de logica voor het **ophalen van de data** (ongeacht de bron, zoals SQL of NoSQL) te implementeren. 
-De template faciliteert vervolgens het 'mappen' van deze bron-data naar het virtuele Digitale Delta datamodel.
+Een ontwikkelaar hoeft dan alleen nog de autorisatie in te regelen en de logica te implementeren die de specifieke databron(nen) uitleest en transformeert naar het DD API V3 formaat.
+DD API schrijft geen interne databasestructuur voor — elke databron (SQL, NoSQL, bestanden, externe API's) kan worden gebruikt.
+De template faciliteert het 'on-the-fly' transformeren van jouw brondata naar het virtuele Digitale Delta datamodel zoals dat via de API wordt uitgewisseld.
 
 De kracht van deze template is dat de OpenAPI (OAS) en `$metadata` (CSDL) definities automatisch worden gegenereerd en gesynchroniseerd op basis van de configuratie. 
 Hierdoor worden URL's, authenticatiemethoden en specifieke eigenschappen (parameters/metadata) consistent ontsloten. 

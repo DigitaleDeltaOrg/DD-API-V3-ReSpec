@@ -12,7 +12,7 @@ Onderstaande lijst bevat bekende publieke endpoints die voldoen aan de DD API V3
 | **MuniSense** (https://munisense.nl)        | Aangesloten waterschappen                    | Grondwatersensordata                   | Beta             | Niet publiek                          | v3     |
 | **Blik-Sensing** (https://blik-sensing.nl)  | Aangesloten waterschappen                    | Grondwatersensordata                   | Beta             | Niet publiek                          | v3     |
 
-Daarnaast heeft FEWS de mogelijkheid gekregen om DD API V3 endpoints te gebruiken als data bron voor CoverageJSON-data.
+Daarnaast heeft Delft-FEWS de mogelijkheid gekregen om DD API V3 endpoints te gebruiken als data bron voor CoverageJSON-data.
 
 ## Aanmelden van nieuwe implementaties
 Organisaties of service providers die een DD API V3 implementatie beschikbaar stellen, worden uitgenodigd om hun endpoint aan te melden bij het [Informatiehuis Water](https://ihw.nl).

@@ -2,18 +2,31 @@
 
 Alle belangrijke wijzigingen aan de DD API worden in dit document gedocumenteerd.
 
-Het formaat is gebaseerd op [Keep a Changelog](https://keepachangelog.com/nl/1.0.0/).
-
+## 2026-02-19
 
 ### Gewijzigd
 
-- Aanpassing van de specificaties van het data model, met verbeterde beschrijving van de kenmerken en het **Measure** type.
-- Herorganiseren en uitbreiden van de roadmap met toegevoegde features zoals GeoPackage export voor FOI en verbeterde JSON-FG support.
+- Tekstuele verduidelijking
+- Verwijdering van het schema voor ANTLR-compilatie
+- Herorganiseren van de V3.1 beschrijving
+- 
+
+## 2026-02-13
+
+### Gewijzigd
+
+- Aanpassing van de specificaties van het datamodel, met verbeterde beschrijving van de kenmerken en het **Measure** type.
+- Verduidelijking van `Vocab`-result type en de relatie met `typering` van IM Metingen.
+- Herorganiseren en uitbreiden van de roadmap voor V4 met toegevoegde features zoals GeoPackage export voor FOI en verbeterde JSON-FG/JSON-LD en NEN3610:2022 ondersteuning.
 - Herindeling van de change log, nu gebaseerd op datum en niet versienummer.
 - Verbetering van metadata, implementatie en gebruiksonderdelen, meer in lijk met terminologie en structuur.
 - Toevoegen van toegankelijkheid bij de implementaties.
 
-## 2026-01-14
+### Opgelost
+
+- Beschrijving van type **Measure** ontbrak in **Result**
+
+## 2026-2-10
 
 ### Toegevoegd
 - Pub/Sub functionaliteit voor asynchrone notificaties met uitgebreide documentatie
@@ -32,7 +45,7 @@ Het formaat is gebaseerd op [Keep a Changelog](https://keepachangelog.com/nl/1.0
 - Roadmap bijgewerkt voor V3.1 planning
 
 ### Opgelost
-- EPSG-code voor ETRS89/31N gecorrigeerd in documentatie (2026-02-10)
+- EPSG-code voor ETRS89/31N gecorrigeerd in documentatie
 
 ## 2025-12-11
 

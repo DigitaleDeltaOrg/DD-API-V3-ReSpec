@@ -34,16 +34,10 @@ Onderstaande scenario's laten zien hoe de DD API V3 direct waarde levert voor de
 
 ## Scenario: De Modellenbouwer (Integratie met Delft-FEWS)
 *   **Vraag**: "Ik wil live sensordata inlezen in Delft-FEWS voor hoogwatervoorspellingen."
-*   **De DD API-oplossing**: FEWS kan via de OData-client direct data ophalen bij conforme sensorplatformen.
-*   **Technisch (V3.0)**: FEWS bevraagt de `/v3/odata/observations` endpoints en gaat uit van het **CoverageJSON** formaat. De Aquo domeintabel **'Waarnemingssoort'** zorgt voor de juiste interpretatie van de aard van de tijdreeks.
+*   **De DD API-oplossing**: Delft-FEWS kan via de OData-client direct data ophalen bij conforme sensorplatformen.
+*   **Technisch (V3.0)**: Delft-FEWS bevraagt de `/v3/odata/observations` endpoints en gaat uit van het **CoverageJSON** formaat. De Aquo domeintabel **'Waarnemingssoort'** zorgt voor de juiste interpretatie van de aard van de tijdreeks.
 
 ## Scenario: De Data Scientist (AI en Trends)
 *   **Vraag**: "Ik wil een model trainen om trends te voorspellen."
 *   **De DD API-oplossing**: De API levert machine-readable data. De tijd die normaal naar 'data wrangling' gaat, wordt geminimaliseerd door de uniforme structuur.
 *   **Technisch (V3.0)**: De scientist laadt data rechtstreeks in Python (Pandas) dataframe. Hoewel **V3.1** (Resultaatprofielen) dit kan vereenvoudigen, biedt de huidige V3.0 structuur al alle noodzakelijke trainingsdata. 
-
-## Scenario: De Kwaliteitsbeheerder (Gevalideerde data-keten) 
-*   **Vraag**: "Hoe zorgen we ervoor dat alleen de door de waterbeheerder gecontroleerde en goedgekeurde lab-resultaten worden gebruikt voor officiële rapportages?" 
-*   **De uitdaging**: Data van een laboratorium is vaak nog een 'concept'. Derden (zoals provincies of het IHW) moeten weten welke versie van de data de 'gevalideerde waarheid' van de waterbeheerder is. 
-*   **De DD API-oplossing**: De waterbeheerder fungeert als bronhouder en publiceert de gevalideerde set via een eigen API-endpoint. 
-*   **Technisch (V3.0)**: De waterbeheerder oogst de data bij het laboratorium. Na de interne validatiestap stelt de waterbeheerder deze data opnieuw beschikbaar via hun eigen `/v3/odata/observations` endpoint. Door de Metadata/modifiedOn tijdstempel en de status-informatie in de Parameter container kunnen afnemers zien dat dit de definitieve versie is. Dit voorkomt dat verschillende organisaties met verschillende (concept)versies van dezelfde meting werken. Door het Id van de observatie gelijk te houden, kan het laboratorium de observaties tussen waterbeheerder en laboratorium matchen.
