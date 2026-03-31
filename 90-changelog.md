@@ -2,6 +2,13 @@
 
 Alle belangrijke wijzigingen aan de DD API worden in dit document gedocumenteerd.
 
+## 2026-03-24
+
+### Toegevoegd
+
+- Create-update-delete (CUD) mechanisme
+- v3.1 document uitgesplitst in één document per feature (search profiles, result profiles, pub/sub, cud)
+
 ## 2026-02-19
 
 ### Gewijzigd

@@ -6,12 +6,18 @@ Ze beschrijven uitsluitend de structuur van de data zoals deze door de API wordt
 Een implementatie hoeft deze structuur intern niet als opslagmodel te gebruiken; de aanbieder is vrij in de keuze van database-technologie en mapt de eigen bronnen on-the-fly naar dit virtuele model.
 </aside>
 
+<aside class="advisement" title="HTTP-methoden en statuscodes">
+DD API V3 volgt de REST API Design Rules (Nederlandse API-strategie) voor het gebruik van HTTP-methoden en statuscodes. 
+De hier beschreven keuzes voor POST, PUT, DELETE en de bijbehorende statuscodes zijn in lijn met de aanbevelingen van deze richtlijnen.
+</aside>
+
 Dit hoofdstuk beschrijft het datamodel van DD API V3, gebaseerd op een subset van de OGC [[OM&S]] standaard.
 
 Dit beschrijft de JSON-representatie van een observatie.
 
-
-Het formaat dat DD API V3 gebruikt is een **technisch uitwisselingsformaat** in JSON encoding, met JSON Schema als normatieve specificatie. Dit betreft niveau 4 (fysiek/technisch datamodel) volgens het MIM-lagenmodel, wat expliciet buiten de scope van MIM valt. MIM is bedoeld voor conceptuele en logische informatiemodellen (niveau 1-3), niet voor REST API-berichtformaten.
+Het formaat dat DD API V3 gebruikt is een **technisch uitwisselingsformaat** in JSON encoding, met JSON Schema als normatieve specificatie. 
+Dit betreft niveau 4 (fysiek/technisch datamodel) volgens het MIM-lagenmodel, wat expliciet buiten de scope van MIM valt. 
+MIM is bedoeld voor conceptuele en logische informatiemodellen (niveau 1-3), niet voor REST API-berichtformaten.
 
 Vet is verplicht. Italic (schuingedrukt) is verplicht onder bepaalde omstandigheden.
 
@@ -75,16 +81,16 @@ Er is één verplichte waarde in Metadata: `ModifiedOn`, wat aangeeft wat de laa
 
 Result is het resultaat van een observatie.
 
-Het formaat van Result is afhankelijk de type van de observatie.  
+Het formaat van Result is afhankelijk van het type van de observatie.  
 
-| Eigenschap | Type                | Omschrijving                                                                 |
-|------------|---------------------|------------------------------------------------------------------------------|
-| **Id**     | string              | Uniek Id van het resultaat (_mag_ gelijk zijn aan het Id van de observatie). |
-| Truth      | string              | Wanneer het resultaat een waarheid representeerd (waar/onwaar, true/false).  |
-| Vocab      | [Vocab](#vocab)     | Wanneer het een `typering` betreft.                                          |
-| Count      | integer             | Pure 'telling', bijvoorbeeld onder een microscoop, altijd een heel getal.    |
-| Coverage   | [[CoverageJSON]]    | Tijdreeksen of verwachtingen.                                                |
-| Measure    | [Measure](#measure) | Waarde/eenheid combinatie.                                                   |
+| Eigenschap | Type                | Omschrijving                                                                                                                   |
+|------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| **Id**     | string              | Uniek Id van het resultaat (_mag_ gelijk zijn aan het Id van de observatie).                                                   |
+| Truth      | string              | Wanneer het resultaat een waarheid representeerd (waar/onwaar, true/false).                                                    |
+| Vocab      | [Vocab](#vocab)     | Wanneer het een `typering` betreft.                                                                                            |
+| Count      | integer             | Pure 'telling', bijvoorbeeld onder een microscoop, altijd een heel getal.                                                      |
+| Coverage   | [[CoverageJSON]]    | Tijdreeksen of verwachtingen.                                                                                                  |
+| Measure    | [Measure](#measure) | Waarde/eenheid combinatie.                                                                                                     |
 
 #### Hulp bij interpretatie voor IM Metingen
 
@@ -120,7 +126,6 @@ Onderwerp/waarde combinatie (classificatie).
 | **Verb**       | string | Woord (definitie) binnen de vocabulary.    |
 | Namespace      | string | Bron voor de definitie. Indien leeg, Aquo. |
 
-
 ## CoverageJSON
 
 Voor tijdreeksen wordt gebruik gemaakt van [[CoverageJSON]] formaat.
@@ -130,7 +135,6 @@ Voor DD API V3 zijn er aan implementeren van een correcte CoverageJSON een aanta
   Dit zorgt ervoor dat eenvoudig een selectie kan plaatsvinden.
 - PhenomenonTime/BeginPosition en PhenomenonTime/EndPosition moeten overeenkomen met het datum-bereik van tenminste één van de tijdreeksen.
 - Metadata/ModifiedOn **moet** overeenkomen met de laatste wijzigingsdatum van de data.
-
 
 ## DD API V3 Observation UML
 
