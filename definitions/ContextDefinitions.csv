@@ -59,7 +59,7 @@ LengthClassInMm,Edm.String,Lengteklasse in Millimeters,"",AquaDesk,ECO,
 WidthClassInCm,Edm.String,Breedteklasse in Centimeters,"",AquaDesk,ECO,
 WidthClassInMm,Edm.String,Breedteklasse in Millimeters,"",AquaDesk,ECO,
 WaveLength,Edm.String,Golflengte,"",Aquo,,
-ValuationMethid,Edm.String,Waardebepalingsmethode,"",Aquo,,
+ValuationMethod,Edm.String,Waardebepalingsmethode,"",Aquo,,
 LimitSymbol,Edm.String,Limietsymbool,"",Aquo,,
 SubstrateDifferentiation,Edm.String,Substraatdifferentiatie,"",AquaDesk,,
 
