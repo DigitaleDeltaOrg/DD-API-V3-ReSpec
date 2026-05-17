@@ -52,3 +52,12 @@ MeasurementDevice,Edm.String,Meetapparaat,"",Aquo,All,
 PrimerTargetGen,Edm.String,Primer Target Gen,"",Aquo,ECO,
 Organ,Edm.String,Orgaan,"",Aquo,ECO,
 Characteristic,Edm.String,Typering,"",Aquo,ECO,
+Checker,Edm.String,Controlerende partij,"",AquaDesk,,
+AnalysisMethod,Edm.String,Analysemethode,"",AquaDesk,,
+LengthClassInCm,Edm.String,Lengteklasse in Centimeters,"",AquaDesk,ECO,
+LengthClassInMm,Edm.String,Lengteklasse in Millimeters,"",AquaDesk,ECO,
+WidthClassInCm,Edm.String,Breedteklasse in Centimeters,"",AquaDesk,ECO,
+WidthClassInMm,Edm.String,Breedteklasse in Millimeters,"",AquaDesk,ECO,
+WaveLength,Edm.String,Golflengte,"",Aquo,,
+
+
