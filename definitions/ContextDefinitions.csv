@@ -62,5 +62,10 @@ WaveLength,Edm.String,Golflengte,"",Aquo,,
 ValuationMethod,Edm.String,Waardebepalingsmethode,"",Aquo,,
 LimitSymbol,Edm.String,Limietsymbool,"",Aquo,,
 SubstrateDifferentiation,Edm.String,Substraatdifferentiatie,"",AquaDesk,,
+QualityAssessment,Edm.String,Kwaliteitsoordeel,"",Aquo,,
+SamplingDevice,Edm.String,Bemonsteringsapparaat,"",Aquo,,
+AnalysisCompartment,Edm.String,Analysecompartiment,"",Aquo,,
+SampleProcessingMethod,Edm.String,Monsterbewerkingsmethode,"",Aquo,,
+
 
 
