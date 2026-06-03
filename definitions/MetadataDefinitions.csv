@@ -1,11 +1,17 @@
-﻿Naam,OData data type,Omschrijving,Vereist,Systeem,Context
-SetComment,Edm.String,Opmerking bij een meetset,false,AquaDesk,ECO
-ObservationComment,Edm.String,Opmerking bij een observatie,false,AquaDesk,ECO
-CollectionComment,Edm.String,Opmerking bij een collectie (monster),false,AquaDesk,ECO
-ModifiedOn,Edm.DateTimeOffset,Datum creatie/wijziging,true,All,All
-OrderNumber,Edm.String,OrderNumber,false,All,ECO
-BaseValue,Edm.Double,Basiswaarde (geobserveerde waarde),false,AquaDesk,ECO
-BaseUnit,Edm.Double,Basiseenheid (van geobserveerde waarde),false,AquaDesk,ECO
-SampleReference,Edm.String,Monsterreferentie (collectienummer),false,All,ECO
-MonitoringNetworks,Collection(Edm.String),Meetnetten,false,AquaDesk,ECO
-Projecten,Collection(Edm.String),Meetnetten,false,AquaDesk,ECO
+﻿Naam,OData data type,Omschrijving,Vereist,Systeem,Toegevoegd
+SetComment,Edm.String,Opmerking bij een meetset,false,AquaDesk,
+ObservationComment,Edm.String,Opmerking bij een observatie,false,AquaDesk,
+CollectionComment,Edm.String,Opmerking bij een collectie (monster),false,AquaDesk,
+ModifiedOn,Edm.DateTimeOffset,Datum creatie/wijziging,true,All,
+OrderNumber,Edm.String,OrderNumber,false,All,
+BaseValue,Edm.Double,Basiswaarde (geobserveerde waarde),false,AquaDesk,
+BaseUnit,Edm.String,Basiseenheid (van geobserveerde waarde),false,AquaDesk,
+SampleReference,Edm.String,Monsterreferentie (collectienummer),false,,
+MonitoringNetworks,Collection(Edm.String),Meetnetten,"",AquaDesk,,
+Projects,Collection(Edm.String),Projecten,"",AquaDesk,ECO,
+ResultOf,Edm.String,Resultaat van,"",AquaDesk,,
+SamplingDeviceLength,Edm.String,Lengte bemonsteringsapparaat,"",AquaDesk,ECO,
+SamplingDeviceMeshSize,Edm.String,Maaswijdte bemonsteringsapparaat,"",AquaDesk,ECO,
+SamplingDeviceSpecification,Edm.String,Specificatie bemonsteringsapparaat,"",AquaDesk,ECO,
+Formula,Edm.String,"Formule, gebruikt om tot het resultaat te komen ","",AquaDesk,ECO,
+AggregationKey,Edm.String,Code van het monster dat gebruikt is om te aggregeren,"",AquaDesk,ECO,
